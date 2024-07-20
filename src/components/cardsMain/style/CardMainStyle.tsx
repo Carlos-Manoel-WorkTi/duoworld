@@ -457,26 +457,25 @@ const CardComponent: React.FC<CardComponentProps> = (prop) => {
             <Data>01/10/2024</Data>
           </div>
           <div id="bloco2">
-            <NavLink to={prop.data.title.link} className="url"/>
-            {/* <a href={prop.data.title.link} target="_parent" rel="noopener noreferrer"> */}
-            <EnterButton startColor={prop.data.style.startColor} endColor= "rgb(2 3 3)" btnColor={prop.data.style.btnBG} btnBG={prop.data.style.btnBG}>
-            Continuar
-            <div className="icon">
-              <svg
-                height="24"
-                width="24"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M0 0h24v24H0z" fill="none"></path>
-                <path
-                  d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
-                  fill="currentColor"
-                ></path>
-              </svg>
-            </div>
-          </EnterButton>
-        
+            <NavLink to={prop.data.title.link} className="url">
+                <EnterButton startColor={prop.data.style.startColor} endColor= "rgb(2 3 3)" btnColor={prop.data.style.btnBG} btnBG={prop.data.style.btnBG}>
+                Continuar
+                <div className="icon">
+                  <svg
+                    height="24"
+                    width="24"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                    <path
+                      d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                      fill="currentColor"
+                    ></path>
+                  </svg>
+                </div>
+              </EnterButton>
+            </NavLink>
           </div>
           <div id="bloco3">
             <ProgressBarContainer >
