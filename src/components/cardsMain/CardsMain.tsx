@@ -60,7 +60,7 @@ export default function CardsMain() {
     title:{
       titleSec:"HISTORIES",
       titleCurrent: "The snow-white",
-      link:"/histories"
+      link:"https://duoworld-auqm-qmfv1qdg6-carlos-manoel-worktis-projects.vercel.app/histories"
     },
     p1: {
       text: 'Historias',
