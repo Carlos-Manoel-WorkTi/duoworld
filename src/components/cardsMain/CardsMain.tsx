@@ -35,7 +35,7 @@ export default function CardsMain() {
     title:{
       titleSec:"WORDS",
       titleCurrent: "WAS",
-      link:""
+      link:"/words"
     },
     p1: {
       text: 'Aprendendo',
