@@ -83,9 +83,9 @@ export default function CardsMain() {
   };
   return (
     <>
-    <CardComponent data={songs}  />
-    <CardComponent data={words} />
-    <CardComponent data={histories} />
+      <CardComponent data={songs}  />
+      <CardComponent data={words} />
+      <CardComponent data={histories} />
     </>
   )
 }

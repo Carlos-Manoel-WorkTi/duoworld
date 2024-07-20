@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import CardComponentProps from '../DTOs/CardComponentProps ';
 import ProgressBarProps from '../DTOs/ProgressBarProps';
+import { NavLink } from 'react-router-dom';
 
 
 const Card = styled.div`
@@ -60,7 +61,7 @@ const TopSection = styled.div<{
     flex-direction: column;
     font-family: "Inika", serif;
 
-    a{
+    .url{
       text-decoration: none;
     }
     #bloco1{
@@ -456,7 +457,8 @@ const CardComponent: React.FC<CardComponentProps> = (prop) => {
             <Data>01/10/2024</Data>
           </div>
           <div id="bloco2">
-            <a href={prop.data.title.link} target="_parent" rel="noopener noreferrer">
+            <NavLink to={prop.data.title.link} className="url"/>
+            {/* <a href={prop.data.title.link} target="_parent" rel="noopener noreferrer"> */}
             <EnterButton startColor={prop.data.style.startColor} endColor= "rgb(2 3 3)" btnColor={prop.data.style.btnBG} btnBG={prop.data.style.btnBG}>
             Continuar
             <div className="icon">
@@ -474,7 +476,7 @@ const CardComponent: React.FC<CardComponentProps> = (prop) => {
               </svg>
             </div>
           </EnterButton>
-          </a>
+        
           </div>
           <div id="bloco3">
             <ProgressBarContainer >
