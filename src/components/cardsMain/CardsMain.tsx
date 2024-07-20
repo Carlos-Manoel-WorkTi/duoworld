@@ -60,7 +60,7 @@ export default function CardsMain() {
     title:{
       titleSec:"HISTORIES",
       titleCurrent: "The snow-white",
-      link:"http://localhost:3000/histories"
+      link:"/histories"
     },
     p1: {
       text: 'Historias',
