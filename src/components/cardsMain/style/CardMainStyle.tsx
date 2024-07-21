@@ -7,8 +7,8 @@ import { NavLink } from 'react-router-dom';
 
 
 const Card = styled.div`
-  width: 260px;
-  height: 330px;
+  width: 280px;
+  height: 360px;
   border-radius: 20px;
   background: #0D0D0D;
   padding: 5px;
@@ -22,17 +22,15 @@ const Card = styled.div`
   }
 
   @media (max-width: 992px){
-    width: 230px;
-    height: 300px;
+    width: 240px;
+    height: 350px;
         }
-  @media (max-width: 720px){
-    width: 200px;
-    height: 290px;
-      }
   @media (max-width: 720px) {
-    width: 80%;
+    width: 90%;
     min-width: 100px;
-    height: 290px;
+    height: 330px;
+
+
     }
 `;
 
@@ -40,7 +38,7 @@ const TopSection = styled.div<{
     startColor?: string;
     endColor?: string;
 }>`
-  height: 180px;
+  height: 215px;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
@@ -65,7 +63,7 @@ const TopSection = styled.div<{
       text-decoration: none;
     }
     #bloco1{
-      height: 52%;
+      height: 56%;
 
       #containerTags{
         display: flex;
@@ -135,6 +133,9 @@ const Border = styled.div`
   @media screen and (max-width:722px) {
     width: 111px;
   }
+  @media (max-width: 600px) {
+    width: 150px;
+  }
 `;
 
 const Icons = styled.div`
@@ -164,7 +165,7 @@ const SocialMedia = styled.div`
 `;
 
 const BottomSection = styled.div`
-  margin-top: 15px;
+  margin-top: 5px;
   padding: 10px 5px;
 
   @media screen and (max-width:600px){
@@ -230,6 +231,11 @@ const TitleSection = styled.div`
         font-size: 1em;
       }
   }
+  @media screen and (max-width:600px){
+      h3{
+        font-size: 1.4em;
+      }
+  }
   
 `;
 const Item = styled.div<{textColor?:string}>`
@@ -278,18 +284,18 @@ const EnterButton = styled.button<{
   font-family: inherit;
   padding: 0.35em;
   padding-left: 1.2em;
-  font-size: 10px;
-  border-radius: 10em;
+  font-size: 11px;
+  border-radius: 0.5em 0.2em  0.2em  0.5em;
   border: none;
   letter-spacing: 0.05em;
   display: flex;
   align-items: center;
   overflow: hidden;
   position: relative;
-  height: 3.2em;
+  height: 3.5em;
   padding-right: 3.3em;
   width: auto;
-  margin-left: -4px;
+  margin-left: -22px;
   cursor: pointer;
   text-transform: uppercase;
   font-weight: 500;
@@ -330,17 +336,20 @@ const EnterButton = styled.button<{
   }
 
   @media screen and (max-width:600px) {
-    margin-left: -2px;
-    font-size: 11px;
+    margin-left: -22px;
+    font-size: 14px;
     height: 3.1em ;
     border-radius: 10px;
   }
 `;
 
 const CurrentTitle = styled.h3`
-  font-size: 1.5em;
+  font-size: 1.6em;
   color: white;
-  padding-bottom: 2px;
+  padding-bottom: 8px;
+  @media (max-width: 720px) {
+    font-size: 1.8em;
+  }
 `
 
 const ProgressBarContainer = styled.div`
@@ -422,7 +431,18 @@ const Parallelogram = styled.div`
   span {
     transform: skew(-20deg);
     font-size: 0.8em;
+    
   }
+
+  @media (max-width: 720px) {
+    width: 50px;
+
+    span {
+    font-size: 0.7em;
+    
+  }
+  }
+
 `;
 
 

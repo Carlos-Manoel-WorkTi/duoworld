@@ -1,5 +1,6 @@
   import styled from "styled-components";
   import BookDTO from "../DTOs/BookDTO";
+import { NavLink } from "react-router-dom";
 
   export const ContainerBooks = styled.section`
     height: auto;
@@ -10,7 +11,7 @@
     flex-wrap: wrap; 
   `;
 
-  const Card = styled.div`
+  const Card = styled.div<{id:number}>`
     box-shadow: 0px 4px 16px #420bb1;
     height: 376px;
     width: 20%; 
@@ -24,6 +25,10 @@
     z-index: 1;
     overflow: hidden;
     margin-bottom: 30px;
+
+    a{
+      text-decoration: none;
+    }
 
     &:hover{
       .background{
@@ -44,8 +49,7 @@
     }
   `;
 
-
-    const Background = styled.div<{link:string}>`
+ const Background = styled.div<{link:string}>`
       position: absolute;
       top: 0;
       left: 0;
@@ -66,9 +70,6 @@
           url(${prop => prop.link});
       }
     `;
-
-
-
     const Container = styled.div`
       color: #ffffff;
       z-index: 2;
@@ -125,19 +126,21 @@
     font-weight: light;   
   `;
 
-  const TagsContainer = styled.div`
+export const TagsContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
     height: fit-content;
     width: fit-content;
     gap: 0.5em;
+    /* margin-bottom: 4px; */
     `;
 
-const Tag = styled.div`
-    border: 2px solid #222222;
+export const Tag = styled.div<{color:string}>`
+    border: 2px solid ${(prop) => prop.color};
     border-radius: 0.5em;
     color: #dddddd;
+    /* color: ${(prop) => prop.color}; #222222*/
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 1em;
     font-weight: normal;
@@ -196,7 +199,7 @@ const Tag = styled.div`
     rating: number;
   }
 
-  const RatingStars: React.FC<RatingStarsProps> = ({ rating }) => {
+  export const RatingStars: React.FC<RatingStarsProps> = ({ rating }) => {
     const fullStars = Math.floor(rating);
     const halfStar = rating % 1 >= 0.5;
 
@@ -215,12 +218,13 @@ const Tag = styled.div`
 
 
   export const Book: React.FC<BookDTO> = (prop) => (
-      <Card>
+    <Card id={prop.id} >
+        <NavLink to={`/histories/${prop.id}`}>
         <Background link={prop.link} className="background" />
         <Container className="container">
           <HeadingContainer>
             <Heading>
-              {prop.title}
+              {prop.title}  
             </Heading>
             <SubHeading>
               By {prop.author}
@@ -236,7 +240,7 @@ const Tag = styled.div`
           </RatingContainer>
           <TagsContainer>
           {prop.tags.map((tag, index) => (
-                <Tag key={index}>
+                <Tag color="#222222" key={index}>
                     <p>{tag}</p>
                 </Tag>              
               ))}
@@ -245,6 +249,7 @@ const Tag = styled.div`
           <Description>
             {prop.description.substring(0,150)+"..."}
           </Description>
+        </NavLink>
       </Card>
     );
 

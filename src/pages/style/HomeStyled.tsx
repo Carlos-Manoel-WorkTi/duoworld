@@ -25,7 +25,7 @@ export const HomeComponent = styled.div`
     background-color: black;
 `
 export const SectionMainComponent = styled.section`
-    height: 400px;
+    height: 485px;
     background: #0D0D0D;
     display: flex;
     justify-content: center;
