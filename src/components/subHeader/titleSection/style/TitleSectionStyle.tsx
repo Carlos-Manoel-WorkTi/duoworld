@@ -1,3 +1,4 @@
+// TitleSectionStyle.tsx
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -6,10 +7,10 @@ export const Container = styled.div`
     background: transparent;
 `;
 
-export const Title = styled.h2<{ sizeText: string }>`
+export const Title = styled.h2<{ $sizetext: number }>`
     position: relative; 
     color: #efefef;
-    font-size: ${props => props.sizeText}px;
+    font-size: ${props => props.$sizetext}px;
     font-family: "Righteous", sans-serif;
     font-weight: 400;
     font-style: normal;

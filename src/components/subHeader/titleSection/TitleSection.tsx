@@ -3,13 +3,13 @@ import { Container, Title} from './style/TitleSectionStyle';
 
 interface TitleSectionProps {
     text:string,
-    sizeText: string;
+    sizetext: number;
 }
 
-const TitleSection: React.FC<TitleSectionProps> = ({ sizeText,text }) => {
+const TitleSection: React.FC<TitleSectionProps> = ({ sizetext,text }) => {
     return (
         <Container >
-          <Title sizeText={sizeText}>
+          <Title $sizetext={sizetext}>
             {text}
           </Title>
         </Container>

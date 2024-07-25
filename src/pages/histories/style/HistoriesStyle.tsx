@@ -9,6 +9,10 @@ import { NavLink } from "react-router-dom";
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap; 
+
+    a{
+      text-decoration: none;
+    }
   `;
 
   const Card = styled.div<{id:number}>`
@@ -131,7 +135,7 @@ export const TagsContainer = styled.div`
     justify-content: center;
     align-items: center;
     height: fit-content;
-    width: fit-content;
+    /* width: fit-content; */
     gap: 0.5em;
     /* margin-bottom: 4px; */
     `;
@@ -142,9 +146,9 @@ export const Tag = styled.div<{color:string}>`
     color: #dddddd;
     /* color: ${(prop) => prop.color}; #222222*/
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 1em;
+    font-size: 0.9em;
     font-weight: normal;
-    padding: 0.5em 0.5em ;
+    padding: 0.4em 0.5em ;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
 
@@ -219,7 +223,7 @@ export const Tag = styled.div<{color:string}>`
 
   export const Book: React.FC<BookDTO> = (prop) => (
     <Card id={prop.id} >
-        <NavLink to={`/histories/${prop.id}`}>
+        <NavLink to={`/histories/id=${prop.id}`}>
         <Background link={prop.link} className="background" />
         <Container className="container">
           <HeadingContainer>
@@ -249,7 +253,7 @@ export const Tag = styled.div<{color:string}>`
           <Description>
             {prop.description.substring(0,150)+"..."}
           </Description>
-        </NavLink>
+    </NavLink>
       </Card>
     );
 

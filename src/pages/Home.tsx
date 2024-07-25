@@ -1,5 +1,5 @@
 import React from 'react';
-import { ContainerMessage, HomeComponent, SectionMessage } from './style/HomeStyled';
+import { ContainerMessage, HomeComponent, LoaderComponent, LoaderDW, SectionMessage, ShowerIn } from './style/HomeStyled';
 import { SectionMainComponent } from './style/HomeStyled';
 import CardsMain from '../components/cardsMain/CardsMain';
 import TitleSection from '../components/subHeader/titleSection/TitleSection';
@@ -12,6 +12,10 @@ function Home() {
 
     <HomeComponent>
            <HeaderComp active="LHome" ></HeaderComp>
+            <ShowerIn>
+              <LoaderComponent></LoaderComponent>
+              <LoaderDW size={35} />
+            </ShowerIn>
           <main>
             <SectionMainComponent>
                 <CardsMain></CardsMain>
@@ -19,7 +23,7 @@ function Home() {
 
             <SectionMessage>
               <LogoName>DuoWorld</LogoName>
-              <TitleSection sizeText="35" text="VOCE SABIA?"/>
+              <TitleSection sizetext={35} text="VOCE SABIA?"/>
               <ContainerMessage>
                 <h5>Actually: Em inglês significa "na verdade", enquanto em português significa "realmente".</h5>
               </ContainerMessage>
