@@ -7,7 +7,7 @@ export const NPage = styled.span`
     margin: 0px 30px 0px 60px;
     top: 151px;
     position: absolute;
-    color: #efefef;
+    color: #f4f4f4;
     font-size: 1.3em;
     #nup{
         padding-left: 3px;
