@@ -7,7 +7,7 @@ import BookDTO from './DTOs/BookDTO';
 import SubHeader from '../../components/subHeader/SubHeader';
 import { RatingStars, TagsContainer, Tag } from './style/HistoriesStyle';
 import { NavigateHistory, Params } from './script/Methods';
-
+import { getItemToLocalStorage, setItemToLocalStorage } from '../../storage/localStorage';
 
 export const HistoryDetail: React.FC<PropBookDetail> = (prop) => {
     const [page, setPage] = useState<string>("1");
@@ -15,7 +15,6 @@ export const HistoryDetail: React.FC<PropBookDetail> = (prop) => {
     const { navigateTo, navigateBack } = NavigateHistory();
     const { getParams } = Params();
     
-  
     const DataCurrentBook: BookDTO = BooksData.find((book) => book.id === parseInt(getParams("id") ?? "1")) ?? {
         id: 1,
         title: '',
@@ -28,19 +27,25 @@ export const HistoryDetail: React.FC<PropBookDetail> = (prop) => {
         chapters: ['']
     };
 
-   
-      // Garante que totalPages é um número
-      const totalPages = DataCurrentBook.totalPages || 1;
-    
-      // Gera as opções do select com base no número total de páginas
-      const pageOptions = Array.from({ length: totalPages }, (_, index) => (
-          <option key={index + 1} value={index + 1}>
-              Capítulo: {index + 1}
-          </option>
-      ));
-  
+    const handleStartReading = () => {
+        const currentCardsData = getItemToLocalStorage('cards') || {
+            songs: { id: '1', nome: 'Another love', pct: 0 },
+            words: { id: '1', nome: 'WAS', pct: 0 },
+            history: { id: '1', nome: 'A Névoa da floresta', pct: 0,pageStoped:0 }
+        };
+        const updatedCardsData = {
+            ...currentCardsData,
+            history: { id: DataCurrentBook.id.toString(), nome: DataCurrentBook.title, pct: 0,pageStoped: currentCardsData.history.pageStoped || 1 }
+        };
+        setItemToLocalStorage('cards', updatedCardsData);
+    };
 
-    
+    const totalPages = DataCurrentBook.totalPages || 1;
+    const pageOptions = Array.from({ length: totalPages }, (_, index) => (
+        <option key={index + 1} value={index + 1}>
+            Capítulo: {index + 1}
+        </option>
+    ));
 
     return (
         <>
@@ -49,8 +54,8 @@ export const HistoryDetail: React.FC<PropBookDetail> = (prop) => {
                 size={30}
                 text="HISTORIES"
                 fieldSearch={true}
-                action1={()=>navigateTo("/histories")}
-                action2={() => parseInt(page) > 1 ? navigateTo(`/histories/id=${DataCurrentBook.id}/name=${encodeURIComponent(DataCurrentBook.title)}/page=1`) :  navigateBack()}
+                action1={() => navigateTo("/histories")}
+                action2={() => parseInt(page) > 1 ? navigateTo(`/histories/id=${DataCurrentBook.id}/name=${encodeURIComponent(DataCurrentBook.title)}/page=1`) : navigateBack()}
             />
             <main>
                 <Contanier>
@@ -84,7 +89,10 @@ export const HistoryDetail: React.FC<PropBookDetail> = (prop) => {
                             Sinopse: {DataCurrentBook.description}
                         </RowDescrition>
                         <RowBtn>
-                            <NavLink to={`/histories/id=${DataCurrentBook.id}/name=${encodeURIComponent(DataCurrentBook.title)}/page=${page}`}>
+                            <NavLink
+                                to={`/histories/id=${DataCurrentBook.id}/name=${encodeURIComponent(DataCurrentBook.title)}/page=${page}`}
+                                onClick={handleStartReading} // Atualiza o localStorage ao iniciar leitura
+                            >
                                 <ButtonInit>
                                     <span className="label">Iniciar leitura</span>
                                     <span className="icon">
@@ -105,17 +113,16 @@ export const HistoryDetail: React.FC<PropBookDetail> = (prop) => {
             <ContainerCaps>
                 {DataCurrentBook.chapters?.length ? DataCurrentBook.chapters.map((chapter, index) => (
                     <Cap key={index}>
-                        <NavLink to={`/histories/id=${DataCurrentBook.id}/name=A%20Névoa%20da%20floresta/page=${index+1}`}>
+                        <NavLink to={`/histories/id=${DataCurrentBook.id}/name=${encodeURIComponent(DataCurrentBook.title)}/page=${index + 1}`}>
                             <div className='cnp'>
                                 <span className='npage'>{index + 1} -</span>
                                 <h4>{chapter}</h4>
                             </div>
-                            <span className='dataCap'>{DataCurrentBook.publicationDate}</span> 
+                            <span className='dataCap'>{DataCurrentBook.publicationDate}</span>
                         </NavLink>
                     </Cap>
                 )) : "Sem capítulos disponíveis"}
             </ContainerCaps>
-
         </>
     );
-};  
+};

@@ -11,6 +11,7 @@ function Home() {
   return (
 
     <HomeComponent>
+
            <HeaderComp active="LHome" ></HeaderComp>
             <ShowerIn>
               <LoaderComponent></LoaderComponent>
@@ -23,7 +24,7 @@ function Home() {
 
             <SectionMessage>
               <LogoName>DuoWorld</LogoName>
-              <TitleSection sizetext={35} text="VOCE SABIA?"/>
+              <TitleSection sizetext={35} $text="VOCE SABIA?"/>
               <ContainerMessage>
                 <h5>Actually: Em inglês significa "na verdade", enquanto em português significa "realmente".</h5>
               </ContainerMessage>

@@ -32,3 +32,8 @@ export const Params = () => {
         getParams
       };
 }
+
+export const calculateReadingPercentage = (currentPage: number, totalPages: number | undefined): number => {
+  if (!totalPages || totalPages === 0) return 0;
+  return (currentPage / totalPages) * 100;
+};

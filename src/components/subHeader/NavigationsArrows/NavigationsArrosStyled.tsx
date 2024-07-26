@@ -32,7 +32,7 @@ const Button = styled.button<NavArrowInterface>`
   &::before {
     position: absolute;
     bottom: -20px;
-    content:  "${(props) => props.text}";
+    content:  "${(props) => props.$text}";
     color: white;
     font-size: 0;
     opacity: 0;
@@ -78,7 +78,7 @@ const SvgIcon = styled.svg<{ direction: string }>`
 `;
 
 interface NavArrowInterface {
-  text?:string;
+  $text?:string;
   direction?:string;
   onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
   onMouseEnter?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
@@ -87,8 +87,8 @@ interface NavArrowInterface {
 }
 
 const NavigationArrow: React.FC<NavArrowInterface> = 
-({ direction = 'left', text = '', onClick }) => (
-  <Button text={text} onClick={onClick}>
+({ direction = 'left', $text = '', onClick }) => (
+  <Button $text={$text} onClick={onClick}>
     <SvgIcon viewBox="0 0 384 512" direction={direction} className="svgIcon">
       <path d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8V64c0-17.7-14.3-32-32-32s-32 14.3-32 32v306.8L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
     </SvgIcon>

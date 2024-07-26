@@ -344,7 +344,7 @@ const EnterButton = styled.button<{
 `;
 
 const CurrentTitle = styled.h3`
-  font-size: 1.6em;
+  font-size: 1.5em;
   color: white;
   padding-bottom: 8px;
   @media (max-width: 720px) {
@@ -364,7 +364,7 @@ const ProgressBarContainer = styled.div`
 const ProgressBarFiller = styled.div<ProgressBarProps>`
   height: 100%;
   width: ${(props) => props.percentage}%;
-  background-color: #868686;
+  background-color: #383838;
   border-radius: inherit;
   text-align: center;
   transition: width 0.2s ease-in;
@@ -378,7 +378,7 @@ const ProgressBarLabel = styled.span`
   position: absolute;
   width: 100%;
   text-align: center;
-  color: #000; /* Ajuste a cor conforme necessário */
+  color: #ababab; /* Ajuste a cor conforme necessário */
   font-weight: bold;
   margin-top: -13px;
   font-size: 0.7em;

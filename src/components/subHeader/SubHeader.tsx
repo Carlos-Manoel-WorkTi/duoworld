@@ -47,18 +47,18 @@ const SubHeader: React.FC<SubHeaderProps> = ({ size, text, fieldSearch, action1,
   return (
     <ContainerHeader>
       <Container>
-        <TitleSection sizetext={size} text={text} />
+        <TitleSection sizetext={size} $text={text} />
       </Container>
       {!fieldSearch ? 
         <ContainerArrowsAndSearch>
           <SearchField />
-          <NavigationArrow direction='left' text='Voltar' onClick={action1} /> 
-          <NavigationArrow direction='right' text='Avançar' onClick={action2} />
+          <NavigationArrow direction='left' $text='Voltar' onClick={action1} /> 
+          <NavigationArrow direction='right' $text='Avançar' onClick={action2} />
         </ContainerArrowsAndSearch>
         :
         <ContainerArrows>
-          <NavigationArrow direction='left' text='Voltar' onClick={action1} />
-          <NavigationArrow direction='right' text='Avançar' onClick={action2} />
+          <NavigationArrow direction='left' $text='Voltar' onClick={action1} />
+          <NavigationArrow direction='right' $text='Avançar' onClick={action2} />
         </ContainerArrows>}
     </ContainerHeader>
   );

@@ -5,28 +5,35 @@ import Home from "../pages/Home";
 import Words from "../pages/words/Words";
 import {HistoryDetail} from '../pages/histories/HistoryDetail';
 import HistoryPage from "../pages/histories/HistoryPage";
+import Error404 from "../pages/erros/Error404";
 
 const Routes = createBrowserRouter([
     {
         path:"/",
-        element: <Home/>
+        element: <Home/>,
+        errorElement: <Error404/>,
     },
     {
         path: "/histories",
-        element: <Histories/>
+        element: <Histories/>,
+        errorElement: <Error404/>
     },
     {
       path: '/histories/:id',
-      element: <HistoryDetail/>
+      element: <HistoryDetail/>,
+      errorElement: <Error404/>
     },
     {
         path: '/histories/:id/:name/:page',
-        element: <HistoryPage/>
+        element: <HistoryPage/>,
+        errorElement: <Error404/>
       },
     {
         path: "/words",
-        element: <Words/>
-    }
+        element: <Words/>,
+        errorElement: <Error404/>
+    },
+   
 ])
 
 
