@@ -378,7 +378,7 @@ const ProgressBarLabel = styled.span`
   position: absolute;
   width: 100%;
   text-align: center;
-  color: #fff; /* Ajuste a cor conforme necessário */
+  color: #000; /* Ajuste a cor conforme necessário */
   font-weight: bold;
   margin-top: -13px;
   font-size: 0.7em;
@@ -497,12 +497,13 @@ const CardComponent: React.FC<CardComponentProps> = (prop) => {
               </EnterButton>
             </NavLink>
           </div>
+           {prop.data.porncetagem ? 
           <div id="bloco3">
-            <ProgressBarContainer >
-              <ProgressBarFiller percentage={60}/>
-              <ProgressBarLabel>{`${60}%`}</ProgressBarLabel>
+           <ProgressBarContainer >
+              <ProgressBarFiller percentage={prop.data.pct}/>
+              <ProgressBarLabel>{`${prop.data.pct}%`}</ProgressBarLabel>
             </ProgressBarContainer>
-          </div>
+          </div>: ""}
         </div>
       </TopSection>
       <BottomSection>

@@ -12,7 +12,9 @@ export const BooksData = [
     "description": "Em meio a uma floresta encantada coberta por uma névoa mística, um grupo de aventureiros se vê em uma jornada épica para desvendar antigos segredos e enfrentar criaturas sobrenaturais. Uma história de bravura e amizade que vai além da imaginação.",
     "publicationDate": "2020-08-15",
     "language": "Portuguese",
-    "publisher": "Editora Floresta"
+    "publisher": "Editora Floresta",
+    "totalPages": 3,  
+    "chapters": ["the fog","a monster in the deep forest","why should i die?"],
   },
   {
     "id": 2,
@@ -24,7 +26,8 @@ export const BooksData = [
     "description": "Quando um cientista audacioso descobre a chave para a vida após a morte, ele desencadeia uma série de eventos que desafiam a compreensão da existência. Embarque em uma viagem por realidades paralelas e mistérios cósmicos nesta narrativa intrigante.",
     "publicationDate": "2019-05-22",
     "language": "Portuguese",
-    "publisher": "Editora Vida"
+    "publisher": "Editora Vida",
+    "totalPages": 3,  
   },
   {
     "id": 3,
@@ -36,7 +39,8 @@ export const BooksData = [
     "description": "Uma detetive é chamada para investigar uma série de crimes inexplicáveis em uma cidade obscura e decadente. Conforme ela se aprofunda, descobre segredos sombrios e uma conspiração que ameaça mudar o destino da cidade.",
     "publicationDate": "2018-11-13",
     "language": "Portuguese",
-    "publisher": "Editora Sombras"
+    "publisher": "Editora Sombras",
+    "totalPages": 3,  
   },
   {
     "id": 4,
@@ -48,7 +52,8 @@ export const BooksData = [
     "description": "Num futuro onde viagens no tempo são possíveis, uma jovem luta para corrigir os erros do passado e criar um futuro melhor. Sua jornada é marcada por dilemas morais e desafios emocionais que testam seus limites.",
     "publicationDate": "2021-01-25",
     "language": "Portuguese",
-    "publisher": "Editora Futuro"
+    "publisher": "Editora Futuro",
+    "totalPages": 3,  
   },
   {
     "id": 5,
@@ -60,7 +65,8 @@ export const BooksData = [
     "description": "Em um mundo onde lendas antigas ganham vida, um historiador busca o significado de uma profecia perdida que pode mudar o curso da história. Descubra uma narrativa rica em mitos e mistérios que revelam o passado oculto da humanidade.",
     "publicationDate": "2022-03-17",
     "language": "Portuguese",
-    "publisher": "Editora Histórica"
+    "publisher": "Editora Histórica",
+    "totalPages": 3,  
   },
   {
     "id": 6,
@@ -72,7 +78,8 @@ export const BooksData = [
     "description": "Em uma floresta encantada, um jovem mago deve enfrentar desafios e desvendar segredos antigos para proteger seu reino das forças das trevas. Uma aventura mágica cheia de perigos e descobertas.",
     "publicationDate": "2017-06-10",
     "language": "Portuguese",
-    "publisher": "Editora Mágica"
+    "publisher": "Editora Mágica",
+    "totalPages": 3,  
   },
   {
     "id": 7,
@@ -84,7 +91,8 @@ export const BooksData = [
     "description": "Quando um guardião do tempo descobre uma maneira de manipular eventos históricos, ele deve enfrentar as consequências de suas ações e proteger a linha do tempo contra forças que buscam distorcer a realidade.",
     "publicationDate": "2020-09-09",
     "language": "English",
-    "publisher": "Time Publishers"
+    "publisher": "Time Publishers",
+    "totalPages": 3,  
   },
   {
     "id": 8,
@@ -96,6 +104,7 @@ export const BooksData = [
     "description": "Uma investigação sobre uma série de desaparecimentos leva a um suspense psicológico profundo, onde segredos sombrios e intrigas pessoais se entrelaçam em um enredo de tirar o fôlego.",
     "publicationDate": "2019-12-03",
     "language": "English",
-    "publisher": "Mystery House"
+    "publisher": "Mystery House",
+    "totalPages": 3,  
   }
 ];

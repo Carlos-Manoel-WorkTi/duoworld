@@ -1,4 +1,5 @@
 
+import { ChangeEvent } from "react";
 import styled from "styled-components";
 
 export const Contanier = styled.section`
@@ -76,13 +77,15 @@ export const RowBtn = styled.div`
     width: 100%;
     height: 40px;
     margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
     
 `
 export interface PropBookDetail {
     // name:string;
 }
 
-export const Button = styled.button`
+export const ButtonInit = styled.button`
   position: relative;
   font-size: 14px;
   letter-spacing: 3px;
@@ -94,7 +97,7 @@ export const Button = styled.button`
   text-transform: uppercase;
   overflow: hidden;
   border-radius: 5px;
-  width: 50%;
+  width: 100%;
   
   &::before {
     content: '';
@@ -136,6 +139,18 @@ export const Button = styled.button`
   }
 `;
 
+export const ButtonCap = styled.select<{value:string,onChange:(event: ChangeEvent<HTMLSelectElement>)=>void}>`
+  background-color: transparent;
+  height: 3em;
+  outline: none;
+  color: white ;
+  padding: 5px 15px;
+  border-radius: 10px;
+
+  option{
+    color: purple;
+  }
+`
 // BOOK
 export const CoverContainer = styled.div<{coverImage:string}>`
   width: 300px; /* Adjust the width as needed */
@@ -237,3 +252,60 @@ export const Image = styled.img`
   width: 100%;
   height: auto;
 `;
+
+export const ContainerCaps = styled.section`
+     display: flex;
+    width: 95%;
+    background: #18181892;
+    height: auto;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    padding: 2% 2%;
+    margin: 10px 30px;
+    border-radius: 5px;
+    border-radius: 5px;
+    flex-direction: column;
+    gap: 10px;
+`
+export const Cap = styled.div`
+  border-radius: 5px;
+  width: 100%;
+  height: 40px;
+  border: 1px gray;
+  display: flex;
+  justify-content: space-between;
+  background-color: transparent;
+  border: 1px solid #a2a2a252;
+  align-items: center;
+  padding: 25px 20px;
+  a{
+    width: 100%;
+    height: 40px;
+    border: 1px gray;
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    align-items: center;
+    }
+  .cnp{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  .npage{
+    font-size: 1.2em;
+    font-family: "Inika", serif;
+    color: rgb(109, 116, 227);
+    display: flex;
+    align-items: center;
+  }
+  h4{
+    font-size: 1.2em;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #d0d0d0;
+  }
+  .dataCap{
+    color: rgb(78, 13, 198);
+  }
+`

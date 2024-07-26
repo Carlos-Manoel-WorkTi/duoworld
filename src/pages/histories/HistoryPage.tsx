@@ -5,6 +5,7 @@ import DataBook from './script/DataBook';
 import SubHeader from '../../components/subHeader/SubHeader';
 import { NavigateHistory, Params } from './script/Methods';
 import ListWords from './script/words';
+import LineMethodsFooter from '../../components/footer/lineMethosFooter/LineMethodsFooter';
 
 export default function HistoryPage() {
   const [selectedWordId, setSelectedWordId] = useState<string | null>(null);
@@ -21,7 +22,7 @@ export default function HistoryPage() {
   const { navigateBack, navigateTo } = NavigateHistory();
   const { getParams } = Params();
 
-  const pageData = DataBook.book.pages.find((page) => page.pageNumber === parseInt(getParams("page"))) ?? { pageNumber: 0, content: "Página não encontrada" };
+  const pageData = DataBook.book.pages.find((page) => page.pageNumber === parseInt(getParams("page"))) ?? { pageNumber: 0, content: "Fim do livro!" };
 
   const { pageNumber, content } = pageData;
 
@@ -72,11 +73,12 @@ export default function HistoryPage() {
       <SubHeader size={30} fieldSearch={true} text={DataBook.book.title} action1={navigateBack} action2={nextPage} />
 
       <ContainerPages>
-        <NPage>Pagina: {pageNumber}</NPage>
+        {pageNumber > 0 ? <NPage>Pagina: {pageNumber}</NPage>: ''}
         <TextPage>
           {renderContentWithWords(content)}
         </TextPage>
       </ContainerPages>
+      <LineMethodsFooter url={`/histories/id=`+DataBook.book.id} action1={navigateBack} action2={nextPage}></LineMethodsFooter>
     </>
   );
 }

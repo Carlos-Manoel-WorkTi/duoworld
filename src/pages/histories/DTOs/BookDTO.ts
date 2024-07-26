@@ -10,4 +10,6 @@ export default interface BookDTO {
   pageCount?: number;
   publisher?: string; 
   language?: string;
+  totalPages?: number;
+  chapters?: string[];
 }

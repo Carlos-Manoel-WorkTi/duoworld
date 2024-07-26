@@ -1,6 +1,9 @@
 
 export default interface CardComponentProps {
     data:{ 
+    id:number,
+    porncetagem:boolean,
+    pct:number,
     title:{
         titleSec:string,
         titleCurrent:string,
