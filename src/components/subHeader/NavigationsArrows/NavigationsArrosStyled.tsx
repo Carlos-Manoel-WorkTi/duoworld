@@ -32,7 +32,7 @@ const Button = styled.button<NavArrowInterface>`
   &::before {
     position: absolute;
     bottom: -20px;
-    content:  "${(props) => props.$text}";
+    content: "${(props) => props.$text}";
     color: white;
     font-size: 0;
     opacity: 0;
@@ -43,6 +43,37 @@ const Button = styled.button<NavArrowInterface>`
     font-size: 13px;
     opacity: 1;
     bottom: unset;
+  }
+
+  @media (max-width: 600px) {
+    transition: none;
+    width: 50px;
+    border-radius: 50%;
+    background-color: rgb(20, 20, 20);
+
+    &:hover {
+      width: 50px;
+      border-radius: 50%;
+      background-color: rgb(20, 20, 20);
+    }
+
+    &:hover .svgIcon {
+      opacity: 1; /* Keep the arrow visible */
+    }
+
+    &::before {
+      display: none; /* Hide the text */
+    }
+  }
+  @media (max-width: 600px) {
+    width: 36px;
+    height: 35px;
+    &:hover {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: rgb(20, 20, 20);
+    }
   }
 `;
 
@@ -78,8 +109,8 @@ const SvgIcon = styled.svg<{ direction: string }>`
 `;
 
 interface NavArrowInterface {
-  $text?:string;
-  direction?:string;
+  $text?: string;
+  direction?: string;
   onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
   onMouseEnter?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
   onMouseLeave?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;

@@ -6,6 +6,7 @@ import Words from "../pages/words/Words";
 import {HistoryDetail} from '../pages/histories/HistoryDetail';
 import HistoryPage from "../pages/histories/HistoryPage";
 import Error404 from "../pages/erros/Error404";
+import Songs from "../pages/songs/Songs";
 
 const Routes = createBrowserRouter([
     {
@@ -31,6 +32,11 @@ const Routes = createBrowserRouter([
     {
         path: "/words",
         element: <Words/>,
+        errorElement: <Error404/>
+    },
+    {
+        path: "/songs",
+        element: <Songs/>,
         errorElement: <Error404/>
     },
    

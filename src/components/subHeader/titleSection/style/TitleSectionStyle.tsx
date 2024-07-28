@@ -14,7 +14,7 @@ export const Title = styled.h2<{ $sizetext: number }>`
     font-family: "Righteous", sans-serif;
     font-weight: 400;
     font-style: normal;
-    padding: 30px 55px;
+    padding: 20px 55px;
     letter-spacing: 4px; 
 
     &::before {
@@ -30,11 +30,11 @@ export const Title = styled.h2<{ $sizetext: number }>`
     }
 
     @media (max-width:600px){
-        font-size: 26px;
-        padding: 30px 45px;
+        font-size: 20px;
+        padding: 15px 35px;
         &::before{
-            height: 40px;
-            left: 20px;
+            height: 35px;
+            left: 10px;
         }
     }
 `;

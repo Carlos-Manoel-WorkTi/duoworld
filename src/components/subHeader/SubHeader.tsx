@@ -19,31 +19,51 @@ const ContainerHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-`;
+  `;
  const ContainerArrows = styled.div`
   display: flex;
   gap: 20px;
   padding-right: 30px;
   align-items: center;
-
+  
   button{
     width: 43px;
     height: 43px;
   }
- `
- const ContainerArrowsAndSearch = styled.div`
- display: flex;
- gap: 15px;
- padding-right: 30px;
- align-items: center;
+  `
+const ContainerArrowsAndSearch = styled.div`
+display: flex;
+gap: 15px;
+padding-right: 30px;
+align-items: center;
 
- button{
-   width: 43px;
-   height: 43px;
- }
-`
+button {
+  width: 43px;
+  height: 43px;
+}
+
+@media (max-width: 600px) {
+  div:first-child {
+    display: none;
+  }
+  button {
+    width: 36px;
+        height: 35px;
+  
+}
+}
+@media (max-width: 600px) {
+
+  button {
+    width: 26px;
+        height: 25px;
+  
+}
+}
+`;
 
 const SubHeader: React.FC<SubHeaderProps> = ({ size, text, fieldSearch, action1, action2}) => {
+  
   return (
     <ContainerHeader>
       <Container>

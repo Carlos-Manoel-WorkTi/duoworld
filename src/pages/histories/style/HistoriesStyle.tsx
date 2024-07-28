@@ -13,6 +13,19 @@ import { NavLink } from "react-router-dom";
     a{
       text-decoration: none;
     }
+    @media screen and (max-width: 845px) {
+      justify-content: center;
+      gap: 5em;
+    }
+    @media screen and (max-width: 680px) {
+      gap: 3.5em;
+    }
+    @media screen and (max-width: 460px) {
+      gap: 2.5em;
+    }
+    @media screen and (max-width: 390px) {
+      gap: 1.5em;
+    }
   `;
 
   const Card = styled.div<{id:number}>`
@@ -29,7 +42,7 @@ import { NavLink } from "react-router-dom";
     z-index: 1;
     overflow: hidden;
     margin-bottom: 30px;
-
+    min-width: 100px;
     a{
       text-decoration: none;
     }
@@ -39,20 +52,55 @@ import { NavLink } from "react-router-dom";
         background-color: #1a1717;
         color: red !important;
       }
+
     }
 
     @media screen and (max-width: 1200px) {
       width: 25%; 
     }
-
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 1060px) {
+      width: 27%;
+      height: 376px;
+    }
+    @media screen and (max-width: 845px) {
+      width: 36%; 
+      height: 386px;
+    }
+    @media screen and (max-width: 680px) {
       width: 40%; 
+      height: 386px;
     }
     @media screen and (max-width: 600px) {
-      width: 50%; 
+      padding: 0.7em 1em;
+      width: 40%; 
+      height: 300px;
+      border-radius: 1.1em;
+    }
+    @media screen and (max-width: 480px) {
+      padding: 0.7em 0.5em;
+      width: 40%; 
+      height: 300px;
+      border-radius: 0.9em;
+    }
+    @media screen and (max-width: 410px) {
+      padding: 0.7em 0.5em;
+      width: 160px; 
+      height: 300px;
+      border-radius: 0.6em;
+    }
+    @media screen and (max-width: 410px) {
+      padding: 0.7em 0.3em;
+      width: 145px;
+      height: 241px;
+      box-shadow: 0px 4px 10px #420bb1;
+    }
+    @media screen and (max-width: 340px) {
+      padding: 0.7em 0.3em;
+      width: 90%;
+      height: 390px;
     }
   `;
-
+    
  const Background = styled.div<{link:string}>`
       position: absolute;
       top: 0;
@@ -73,6 +121,20 @@ import { NavLink } from "react-router-dom";
             #111111d2),
           url(${prop => prop.link});
       }
+
+      @media screen and (max-width: 1060px) {
+        height: 120%;
+    }
+    @media screen and (max-width: 600px){
+      height: 100%;
+      background-image: 
+        linear-gradient(to top, #111111 40%, 
+            transparent),
+        url(${prop => prop.link});
+    }
+    @media screen and (max-width: 490px) {
+        height: 100%;
+    }
     `;
     const Container = styled.div`
       color: #ffffff;
@@ -97,6 +159,15 @@ import { NavLink } from "react-router-dom";
     font-size: 1.5em;
     letter-spacing: 0.2em;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    @media screen and (max-width: 1060px) {
+      font-size: 1.3em;
+    }
+    @media screen and (max-width: 440px) {
+      font-size: 1em;
+    }
+    @media screen and (max-width: 340px){
+      font-size: 1.5em;
+    }
   `;
 
   const SubHeading = styled.p`
@@ -104,6 +175,15 @@ import { NavLink } from "react-router-dom";
     font-size: 1.2em;
     font-family: 'Courier New', Courier, monospace;
     color: #959595;
+    @media screen and (max-width: 1060px) {
+      font-size: 1.1em;
+    }
+    @media screen and (max-width: 440px) {
+      font-size: 0.8em;
+    }
+    @media screen and (max-width: 340px){
+      font-size: 1.3em;
+    }
   `;
 
   const RatingContainer = styled.div`
@@ -113,6 +193,15 @@ import { NavLink } from "react-router-dom";
     height: fit-content;
     width: 100%;
     gap: 1.5em;
+    @media screen and (max-width: 1060px) {
+      gap: 0.3em;
+    }
+    @media screen and (max-width: 600px) {
+      
+    }
+    @media screen and (max-width: 325px){
+
+    }
   `;
 
   const IconsContainer = styled.div`
@@ -121,13 +210,59 @@ import { NavLink } from "react-router-dom";
     gap: 0.5em;
     width: fit-content;
     height: fit-content;
+    @media screen and (max-width: 1060px) {
+      .rating-stars{
+        
+      }
+    }
+    @media screen and (max-width: 560px) {
+      svg{
+        width: 17px;
+        height: 17px;
+      }
+    
+    @media screen and (max-width: 450px) {
+      svg{
+        width: 15px;
+        height: 15px;
+      }
+    }
+    @media screen and (max-width: 380px) {
+      svg{
+        width: 13px;
+        height: 13px;
+      }
+    }
+    @media screen and (max-width: 350px) {
+      svg{
+        width: 10px;
+        height: 10px;
+      }
+    }
+    @media screen and (max-width: 340px){
+      svg{
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
   `;
 
   const RatingText = styled.div`
     color: #ffffff;
     font-family: 'Nunito', sans-serif;
     font-size: 1.2em;
-    font-weight: light;   
+    font-weight: light;
+    
+    @media screen and (max-width: 1060px) {
+      font-size: 1em;
+    }
+    @media screen and (max-width: 480px) {
+      font-size: 0.8em  ;
+    }
+    @media screen and (max-width: 340px){
+      font-size: 1.1em  ;
+    }
   `;
 
 export const TagsContainer = styled.div`
@@ -156,6 +291,19 @@ export const Tag = styled.div<{color:string}>`
       background-color: #222222;
       color: white;
     }
+
+    @media screen and (max-width: 600px) {
+      font-size: 0.7em  ;
+      padding: 0.4em 0.2em ;
+    }
+    @media screen and (max-width: 450px) {
+      font-size: 0.6em  ;
+      padding: 0.3em 0.1em ;
+    }
+    @media screen and (max-width: 340px){
+      font-size: 0.9em  ;
+      padding: 0.4em 0.4em ;
+    }
   `;
 
   const Description = styled.p`
@@ -171,6 +319,17 @@ export const Tag = styled.div<{color:string}>`
 
     ${Card}:hover & {
       height: 7em;
+    }
+
+    @media screen and (max-width: 600px){
+      ${Card}:hover & {
+      display: none;  
+    }
+    }
+    @media screen and (max-width: 340px){
+      ${Card}:hover & {
+      display: block;
+    }
     }
   `;
 
@@ -256,5 +415,6 @@ export const Tag = styled.div<{color:string}>`
     </NavLink>
       </Card>
     );
+
 
 

@@ -1,10 +1,12 @@
 
 import React from 'react'
 import SearchWrapper from './style/SearchFieldStyle'
-
+// interface SearchFieldProps {
+//   onFocusChange?: (isFocused: boolean) => void;
+// }
 export default function SearchField() {
   return (
-    <SearchWrapper>
+    <SearchWrapper >
          <div className="input-wrapper">
       <button className="icon">
         <svg

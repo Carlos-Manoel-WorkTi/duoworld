@@ -5,6 +5,8 @@ import CardsMain from '../components/cardsMain/CardsMain';
 import TitleSection from '../components/subHeader/titleSection/TitleSection';
 import { LogoName } from '../components/logo/Logo';
 import HeaderComp from '../components/header/Header_comp';
+import Footer from '../components/footer/Footer';
+import NavMobile from '../components/navMobile/NavMobile';
 
 
 function Home() {
@@ -30,6 +32,8 @@ function Home() {
               </ContainerMessage>
             </SectionMessage>
           </main>
+          <NavMobile></NavMobile>
+          <Footer/>
     </HomeComponent>
   );
 }

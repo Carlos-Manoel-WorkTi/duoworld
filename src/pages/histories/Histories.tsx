@@ -4,6 +4,9 @@ import SubHeader from "../../components/subHeader/SubHeader";
 import { ContainerBooks, Book } from "./style/HistoriesStyle";
 import { BooksData } from "./script/HistoriesScript";
 import {NavigateHistory} from "./script/Methods";
+import SearchFull from "../../components/searchFull/SearchFull";
+import Paginato from "../../components/paginato/Paginato";
+import Footer from "../../components/footer/Footer";
 
 
 const Histories = () => {
@@ -12,7 +15,8 @@ const Histories = () => {
   
   return (<>
       <HeaderComp active="LHistories"></HeaderComp>
-      <SubHeader size={30} text="HISTORIES" fieldSearch={false} action1={navigateBack}/>
+      <SubHeader size={30} text="HISTORIES" fieldSearch={false} action1={navigateBack} />
+      <SearchFull/>
       <main>
         <ContainerBooks>
            {BooksData.map((book, index) => (
@@ -29,6 +33,8 @@ const Histories = () => {
             ))}
         </ContainerBooks>
       </main>
+      <Paginato/>
+      <Footer/>
     </>
   );
 };

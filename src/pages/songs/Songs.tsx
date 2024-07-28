@@ -5,14 +5,14 @@ import SearchFull from '../../components/searchFull/SearchFull'
 import { NavigateHistory } from '../histories/script/Methods';
 
 
-export default function Words() {
+export default function Songs() {
 
   const { navigateBack } = NavigateHistory();
 
   return (
     <>
-      <HeaderComp active="LWords"></HeaderComp>
-      <SubHeader size={30} text="WORDS" fieldSearch={false} action1={navigateBack} />
+      <HeaderComp active="LSongs"></HeaderComp>
+      <SubHeader size={30} text="SONGS" fieldSearch={false} action1={navigateBack} />
       <SearchFull/>
     </>
   )

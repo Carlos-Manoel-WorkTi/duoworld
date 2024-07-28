@@ -80,12 +80,22 @@ export const ContainerMessage = styled.div`
 `
 export const ShowerIn = styled.section`
     width: 100%;
-    height: 20vh;
+    height: 18vh;
     background-color: rgb(13, 13, 13);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-right: 40px;
+    @media (max-width: 800px) {
+      height: 14vh;
+  }
+    @media (max-width: 500px) {
+      height: 14vh;
+      div:last-child{
+        display: none;
+      }
+  }
+  
     `
 // HomeStyled.ts
 
@@ -105,6 +115,15 @@ const uiverse723 = keyframes`
 const Loader = styled.div`
   position: relative;
   margin: 60px 220px;
+  @media (max-width: 600px) {
+    margin: 60px 153px;
+    }
+    @media (max-width: 500px) {
+      margin: 40px 123px;
+    }
+    @media (max-width: 360px) {
+      margin: 30px 100px;
+    }
 `;
 
 const Span = styled.span`
@@ -126,6 +145,18 @@ const Span = styled.span`
     color: rgb(65, 54, 189);
     -webkit-text-stroke: 1px rgb(105, 41, 224);
     animation: ${uiverse723} 3s ease-in-out infinite;
+  }
+  @media (max-width: 600px) {
+    font-size: 40px;
+    
+  }
+  @media (max-width: 500px) {
+    font-size: 30px;
+    
+  }
+  @media (max-width: 360px) {
+    font-size: 25px;
+    
   }
 `;
 
@@ -170,6 +201,7 @@ const LoaderContainer = styled.div`
   border: none;
   border-radius: 20px;
   padding: 10px;
+
 `;
 
 const SvgContainer = styled.svg`
