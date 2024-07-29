@@ -2,9 +2,9 @@ import React from 'react';
 import { ContainerFooter, FooterContent, FooterLinks, FooterText} from './style/FooterStyled';
 import { LoaderDW } from '../../pages/style/HomeStyled';
 
-export default function Footer() {
+const Footer: React.FC<{ wdb?: boolean }> = ({ wdb = true }) => {
   return (
-    <ContainerFooter>
+    <ContainerFooter awb={wdb}>
       <FooterContent>
         {/*, FooterLogo  <FooterLogo src={logoSrc} alt="Logo" /> */}
         <LoaderDW size={35} />
@@ -19,3 +19,4 @@ export default function Footer() {
     </ContainerFooter>
   );
 }
+export default Footer;

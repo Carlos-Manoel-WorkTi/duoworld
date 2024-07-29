@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ContainerFooter = styled.footer`
+export const ContainerFooter = styled.footer<{awb:boolean}>`
   width: 100%;
   background:linear-gradient(to bottom, rgb(13 13 14), rgb(17, 4, 45), rgb(7, 2, 16));
   color: #ffffff;
@@ -10,8 +10,9 @@ export const ContainerFooter = styled.footer`
   align-items: center;
   text-align: center;
   border-top: 1px solid #242424;
-
+  
   @media screen and (max-width: 600px){
+    margin-bottom: ${prop => prop.awb ? 50 : 0}px;
     padding: 15px;
   }
 `;

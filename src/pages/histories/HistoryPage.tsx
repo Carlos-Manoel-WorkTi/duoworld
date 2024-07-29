@@ -28,6 +28,7 @@ import {
   getItemToLocalStorage,
   setItemToLocalStorage,
 } from "../../storage/localStorage";
+import Footer from "../../components/footer/Footer";
 
 interface CardData {
   id: string;
@@ -184,6 +185,7 @@ export default function HistoryPage() {
         action1={navigateBack}
         action2={nextPage}
       ></LineMethodsFooter>
+      <Footer wdb={false}/>
     </>
   );
 }

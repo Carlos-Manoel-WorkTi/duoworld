@@ -8,6 +8,8 @@ import SubHeader from '../../components/subHeader/SubHeader';
 import { RatingStars, TagsContainer, Tag } from './style/HistoriesStyle';
 import { NavigateHistory, Params } from './script/Methods';
 import { getItemToLocalStorage, setItemToLocalStorage } from '../../storage/localStorage';
+import NavMobile from '../../components/navMobile/NavMobile';
+import Footer from '../../components/footer/Footer';
 
 export const HistoryDetail: React.FC<PropBookDetail> = (prop) => {
     const [page, setPage] = useState<string>("1");
@@ -123,6 +125,8 @@ export const HistoryDetail: React.FC<PropBookDetail> = (prop) => {
                     </Cap>
                 )) : "Sem capítulos disponíveis"}
             </ContainerCaps>
+            <NavMobile active="NHistories" ></NavMobile>
+            <Footer wdb={true}/>
         </>
     );
 };

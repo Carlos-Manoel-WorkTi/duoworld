@@ -32,8 +32,8 @@ function Home() {
               </ContainerMessage>
             </SectionMessage>
           </main>
-          <NavMobile></NavMobile>
-          <Footer/>
+          <NavMobile active="NHome" ></NavMobile>
+          <Footer wdb={true}/>
     </HomeComponent>
   );
 }

@@ -7,6 +7,7 @@ import {NavigateHistory} from "./script/Methods";
 import SearchFull from "../../components/searchFull/SearchFull";
 import Paginato from "../../components/paginato/Paginato";
 import Footer from "../../components/footer/Footer";
+import NavMobile from "../../components/navMobile/NavMobile";
 
 
 const Histories = () => {
@@ -34,6 +35,7 @@ const Histories = () => {
         </ContainerBooks>
       </main>
       <Paginato/>
+      <NavMobile active="NHistories" ></NavMobile>
       <Footer/>
     </>
   );

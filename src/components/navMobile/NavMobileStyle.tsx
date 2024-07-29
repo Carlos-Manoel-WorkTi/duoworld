@@ -10,16 +10,16 @@ export const ContainerNav = styled.nav`
   @media (min-width: 600px) {
     display: none;
   }
-`;
+  `;
 
 export const ButtonContainer = styled.div`
   display: flex;
-  background-color: #141313; 
+  background-color: #080808; 
   width: 100%;
   height: 50px;
   align-items: center;
   justify-content: space-around;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px, rgba(245, 73, 144, 0.5) 5px 10px 15px;
+  box-shadow: rgb(32, 17, 79)0px 5px 15px, rgb(32, 17, 79) 5px 10px 15px;
   margin: 0 auto; 
 `;
 
@@ -40,13 +40,23 @@ export const Button = styled.button`
   &:hover {
     transform: translateY(-3px);
   }
+
+  a{
+    text-decoration: none;
+    color: #ebebeb;
+  }
+  #NHome,#NSongs,#NHistories,#NWords,#NHelp,#NUser{
+            border-bottom: 2px solid rgb(65, 54, 189);
+        }
 `;
 
 export const Icon = styled.svg`
-  font-size: 20px;
+  font-size: 27px;
   width: 1em;
   height: 1em;
   stroke-width: 0;
   fill: currentColor;
   stroke: currentColor;
+
+
 `;
