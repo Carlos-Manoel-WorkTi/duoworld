@@ -42,21 +42,14 @@ button {
   height: 43px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 690px) {
   div:first-child {
     display: none;
   }
-  button {
-    width: 36px;
-        height: 35px;
-  
-}
-}
-@media (max-width: 600px) {
 
   button {
     width: 26px;
-        height: 25px;
+    height: 25px;
   
 }
 }

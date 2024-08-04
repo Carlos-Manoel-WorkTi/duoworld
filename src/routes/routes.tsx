@@ -7,6 +7,7 @@ import {HistoryDetail} from '../pages/histories/HistoryDetail';
 import HistoryPage from "../pages/histories/HistoryPage";
 import Error404 from "../pages/erros/Error404";
 import Songs from "../pages/songs/Songs";
+import SongInit from "../pages/songs/SongInit";
 
 const Routes = createBrowserRouter([
     {
@@ -37,6 +38,11 @@ const Routes = createBrowserRouter([
     {
         path: "/songs",
         element: <Songs/>,
+        errorElement: <Error404/>
+    },
+    {
+        path: "/songs/:name/:id",
+        element: <SongInit/>,
         errorElement: <Error404/>
     },
    

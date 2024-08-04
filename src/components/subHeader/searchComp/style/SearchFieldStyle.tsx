@@ -61,7 +61,7 @@ const SearchWrapper = styled.div`
     transition: all 500ms cubic-bezier(0, 0.11, 0.35, 2);
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     .input {
       width: 0px;
       height: 36px;

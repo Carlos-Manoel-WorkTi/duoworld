@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import HeaderComp from '../../components/header/Header_comp';
-import { Author, BlocoFirst, BlocoSecond, ButtonInit, ButtonCap, Card, CardContent, Contanier, DataPublicate, Image, PropBookDetail, RowAvaliative, RowBtn, RowDescrition, Title, ContainerCaps, Cap } from './style/HistoryDetailStyle';
+import { Author, BlocoFirst, BlocoSecond, ButtonInit, ButtonCap, Card, CardContent, Contanier, DataPublicate, Image, PropBookDetail, RowAvaliative, RowBtn, RowDescrition, Title, ContainerCaps, Cap, RowDescritionMb } from './style/HistoryDetailStyle';
 import { BooksData } from './script/HistoriesScript';
 import BookDTO from './DTOs/BookDTO';
 import SubHeader from '../../components/subHeader/SubHeader';
@@ -61,7 +61,8 @@ export const HistoryDetail: React.FC<PropBookDetail> = (prop) => {
             />
             <main>
                 <Contanier>
-                    <BlocoFirst>
+                    <div id="ib">
+                          <BlocoFirst>
                         <Card>
                             <Image src={DataCurrentBook.link} alt="description" />
                             <CardContent>{DataCurrentBook.title}</CardContent>
@@ -75,7 +76,7 @@ export const HistoryDetail: React.FC<PropBookDetail> = (prop) => {
                         <Author>by {DataCurrentBook.author}</Author>
                         <RowAvaliative>
                             <span>
-                                <span id="aval">Avaliação:</span> {DataCurrentBook.rating}
+                                <span id="aval">Rate:</span> {DataCurrentBook.rating}
                             </span>
                             <RatingStars rating={DataCurrentBook.rating} />
                         </RowAvaliative>
@@ -110,6 +111,9 @@ export const HistoryDetail: React.FC<PropBookDetail> = (prop) => {
                             </ButtonCap>
                         </RowBtn>
                     </BlocoSecond>
+                    </div>
+                  
+                    <RowDescritionMb> Sinopse: {DataCurrentBook.description}</RowDescritionMb>
                 </Contanier>
             </main>
             <ContainerCaps>

@@ -12,7 +12,7 @@ export const ContainerSearchFull = styled.div`
     @media (min-width: 600px) {
         /* display:none; */
     }
-    @media (min-width: 600px) {
+    @media (min-width: 700px) {
         div:last-child{
             display:none !important;
         }

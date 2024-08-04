@@ -47,8 +47,8 @@ export const HeaderComponent = styled.header`
     #logo{
         display: flex;
         justify-content: center;
-        width: 30%;
-        font-size: 2em;
+        width: 29%;
+        font-size: 1.9em;
         color: white;
         font-family: "Shojumaru", system-ui;
         font-weight: 400;
@@ -56,6 +56,7 @@ export const HeaderComponent = styled.header`
 
         @media (max-width: 992px){
           justify-content: space-around;
+          display: none;
         }
         @media (max-width: 720px){
           font-size: 1.6em;
@@ -66,7 +67,7 @@ export const HeaderComponent = styled.header`
     }
 
     ul{
-        width: 40%;
+        width: 42%;
         display: flex;
         gap: 23px;
         color: white;
@@ -91,8 +92,22 @@ export const HeaderComponent = styled.header`
     }
 
     }
-
-    @media (max-width: 992px) {
+    @media (max-width: 992px){
+      ul{
+        width: auto;
+      }
+    } 
+    @media (max-width: 690px){
+      ul{
+        width: auto;
+        gap: 15px;
+        margin-right: -5px;
+      }
+      ul li a{
+        font-size: 0.9em;
+      }
+    } 
+    @media (max-width: 600px) {
       ul{
         width: auto;
       }
@@ -144,7 +159,7 @@ export const HamburgerLabel = styled.label`
   }
 
 
-  @media (min-width: 992px) {
+  @media (min-width: 600px) {
       display:none;
     }
 `;

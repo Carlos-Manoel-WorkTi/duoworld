@@ -325,6 +325,7 @@ const EnterButton = styled.button<{
 
   &:hover .icon {
     width: calc(100% - 0.6em);
+    border-radius: 0.5em;
 
     svg {
       transform: translateX(0.1em);
