@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import styled,{ keyframes } from "styled-components";
+import styled from "styled-components";
 
 export const ContainerSong = styled.section`
     width: 100%;
@@ -8,7 +8,20 @@ export const ContainerSong = styled.section`
     flex-wrap: wrap;
     justify-content: space-around;
     row-gap: 30px;
-    @media (max-width: 460px) {
+    row-gap: 60px;
+    overflow: hidden;
+    max-height: 900px;
+    
+    @media (max-width: 1070px) {
+      max-height: 865px;
+    }
+    @media (max-width: 990px) {
+      max-height: 755px;
+    }
+    @media (max-width: 880px) {
+      max-height: 673px;
+    }
+    @media (max-width: 480px) {
     row-gap: 20px;
   }
     
@@ -23,139 +36,9 @@ export const Icon = styled.svg<{ className?: string }>`
 
 
 
-const borderAnimate = keyframes`
-  0% {
-    transform: rotate(0);
-    background: conic-gradient(#f53a19, transparent 20%);
-  }
-
-  80% {
-    background: conic-gradient(#e13415, transparent 90%);
-  }
-
-  100% {
-    transform: rotate(360deg);
-    background: conic-gradient(#e33819, #d32506);
-  }
-`;
-
-const reveal = keyframes`
-  0% {
-    width: 0;
-  }
-
-  100% {
-    width: 35%;
-  }
-`;
 
 // Componentes Estilizados
-const Container = styled.div`
-  width: 37px;
-  height: 34px;
-  position: relative;
-  margin-top: -7px;
-  border-radius: 50%;
-  @media (max-width: 460px){
-    margin-top: -13px;
-  }
-`;
 
-const PlayButton = styled.input`
-  position: absolute;
-  appearance: none;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: conic-gradient(#56d866, #13af13);
-  cursor: pointer;
-  outline: none;
-
-  &::before {
-    content: "";
-    position: absolute;
-    width: 93%;
-    height: 93%;
-    background-color: #000;
-    border-radius: 50%;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  &:checked {
-    animation: ${borderAnimate} 700ms ease-in-out 1;
-    animation-fill-mode: forwards;
-  }
-`;
-
-const PlayIcon = styled.div`
-  position: absolute;
-  width: 14px;
-  height: 12px; 
-  left: 60%;
-  top: 50%;
-  background-color: #75ff47;
-  transform: translate(-60%, -50%) rotate(90deg);
-  clip-path: polygon(50% 15%, 0% 100%, 100% 100%);
-  transition: all 400ms ease-in-out;
-  cursor: pointer;
-  z-index: 2;
-
-  ${PlayButton}:checked + & {
-    clip-path: polygon(0 100%, 0% 100%, 100% 100%);
-  }
-`;
-
-const PauseIcon = styled.div`
-  position: absolute;
-  width: 14px;
-  height: 12px; 
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  cursor: pointer;
-  z-index: 2;
-
-  &::before {
-    content: "";
-    position: absolute;
-    width: 0%;
-    height: 100%;
-    background-color: #f63f1e;
-    left: 0;
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 100%;
-    background-color: #f54425;
-    right: 0;
-  }
-
-  ${PlayButton}:checked ~ &::before {
-    animation: ${reveal} 300ms ease-in-out 350ms 1;
-    animation-fill-mode: forwards;
-  }
-
-  ${PlayButton}:checked ~ &::after {
-    animation: ${reveal} 300ms ease-in-out 600ms 1;
-    animation-fill-mode: forwards;
-  }
-`;
-const PlayPauseButton: React.FC = () => {
-    return (
-      <Container>
-        <label>
-          <PlayButton type="checkbox" />
-          <PlayIcon />
-          <PauseIcon />
-        </label>
-      </Container>
-    );
-  };
   
   const ContainerSongs = styled.div<{$url:string}>`
     width: 23%;
@@ -164,12 +47,15 @@ const PlayPauseButton: React.FC = () => {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    border-top: 1px solid #2f2f2f;
     color: white;
     position: relative;
     z-index: 1;
-    max-width: 320px;
+    max-width: 300px;
     min-height: 340px;
+    max-height: 410px;
     border-radius: 10px;
+
     & > * {
       position: relative;
       z-index: 3;
@@ -203,17 +89,18 @@ const PlayPauseButton: React.FC = () => {
     h2{
       width: 100%;
       display: flex;
-      font-size: 2.6em;
-      padding: 6% 3% 0% 4%;
+      font-size: 2.5em;
+      padding: 5% 3% 0% 4%;
       font-family: "Libre Bodoni", serif;
       font-optical-sizing: auto;
-      min-height: 170px;
+      min-height: 120px;
+      max-height: 200px;
       align-items: end;
     }
     h3{
       width: 100%;
       display: block;
-      font-size: 1.8em;
+      font-size: 1.7em;
       padding: 0% 0% 5% 4%;
       font-family: "IBM Plex Sans", sans-serif;
       font-weight: 100;
@@ -248,6 +135,75 @@ const PlayPauseButton: React.FC = () => {
       box-shadow: 0px 2px 2px #e6e5e8;;
       transition: ease-in;
     }
+    @media screen and (max-width:992px) {
+    h2{
+      font-size: 2.1em;
+      min-height: 130px;
+    }
+    h3{
+      font-size: 1.5em;
+    }
+    .blocoInf{
+      padding: 3% 4% 5% 4%;
+      .time{
+       font-size: 1em;
+      }
+    }
+  }
+    @media screen and (max-width:880px){
+      min-height: 300px;
+
+      h2{
+      font-size: 1.7em;
+      min-height: 110px;
+    }
+    h3{
+      font-size: 1.2em;
+    }
+    .blocoInf{
+      padding: 3% 4% 5% 4%;
+      .time{
+       font-size: 0.8em;
+      }
+    }
+    }
+    @media (max-width: 800px) {
+      width: 30%;
+      height: 100%;
+      border-radius: 10px;
+}   
+@media (max-width: 600px) {
+      width: 40%;
+      height: 100%;
+      border-radius: 10px;
+}  
+@media (max-width: 480px) {
+  min-height: 260px;
+  width: 42%;
+      h2{
+      min-height:80px;
+    }
+  }  
+  @media (max-width: 390px) {
+    min-height: 245px;
+    width: 45%;
+    h2{
+      font-size: 1.6em;
+      min-height:80px;
+    }
+    h3{
+      font-size: 1.1em;
+    }
+    .data{
+      font-size: 0.7em;
+    }
+    .blocoInf{
+      padding: 3% 4% 5% 4%;
+      .time{
+       font-size: 0.7em;
+      }
+    }
+}  
   `
 
 const Tag = styled.span<{ $cl: string }>`
@@ -272,6 +228,15 @@ const Tag = styled.span<{ $cl: string }>`
   display: flex;
   align-items: start;
   border-radius: 5px;
+  @media screen and (max-width:992px) {
+    font-size: 1em;
+  }
+  @media screen and (max-width:880px) {
+    font-size: 0.8em;
+  }
+  @media screen and (max-width:390px) {
+    font-size: 0.7em;
+  }
 `;
 
 const StyledButton = styled.button`
@@ -336,6 +301,15 @@ const StyledButton = styled.button`
     background-color: #4315ae;
     transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
   }
+
+  @media screen and (max-width:880px) {
+    font-size: 1em;
+    padding: 10px 20px;
+  }
+  @media screen and (max-width:390px) {
+    font-size: 0.9em;
+    padding: 9px 13px;
+  }
 `;
   interface CardsSongsIA {
     link:string;
@@ -346,7 +320,7 @@ const StyledButton = styled.button`
     time:string;
     id?:number;
   }
-  const CardSong: React.FC<CardsSongsIA> = ({link,name,data,author,tag,time,id}) => {
+  export const CardSong: React.FC<CardsSongsIA> = ({link,name,data,author,tag,time,id}) => {
     return(
       <ContainerSongs $url={link}>
         <div className="blocoIcons">
@@ -376,4 +350,3 @@ const StyledButton = styled.button`
       </ContainerSongs>
     )
   }
-  export  {PlayPauseButton,CardSong};

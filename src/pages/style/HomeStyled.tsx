@@ -16,6 +16,10 @@ export const GlobalStyle = createGlobalStyle`
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         background-color: #0D0D0D;
+        overflow-x: hidden;
+        box-sizing: border-box;
+        height: 100vh;
+        min-height: 100vh;
     }
 
 `;
