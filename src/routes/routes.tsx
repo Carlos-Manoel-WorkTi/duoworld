@@ -8,6 +8,7 @@ import HistoryPage from "../pages/histories/HistoryPage";
 import Error404 from "../pages/erros/Error404";
 import Songs from "../pages/songs/Songs";
 import SongInit from "../pages/songs/SongInit";
+import Teste from "../pages/songs/teste";
 
 const Routes = createBrowserRouter([
     {
@@ -38,6 +39,11 @@ const Routes = createBrowserRouter([
     {
         path: "/songs",
         element: <Songs/>,
+        errorElement: <Error404/>
+    },
+    {
+        path: "/teste",
+        element: <Teste/>,
         errorElement: <Error404/>
     },
     {

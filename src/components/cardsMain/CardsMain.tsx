@@ -8,6 +8,8 @@ interface CardData {
   nome: string;
   pct: number;
   pageStoped?:number;
+  stoped?:number;
+  totally?:number;
 }
 
   interface CardsList {
@@ -33,7 +35,7 @@ export default function CardsMain() {
     if (!storedCardsData) {
    
       const initialCardsData: CardsList = {
-        songs: { id: '1', nome: 'Another love', pct: 0},
+        songs: { id: '1', nome: 'Another love', pct: 0,stoped: 0,totally:0},
         words: { id: '1', nome: 'WAS', pct: 0},
         history: { id: '1', nome: 'A Névoa da floresta', pct: 0,pageStoped:0 }
       };
@@ -57,7 +59,7 @@ export default function CardsMain() {
     title: {
       titleSec: "SONGS",
       titleCurrent: truncateTitle(cardsData.songs.nome),
-      link: `/histories/id=${cardsData.history.id}`
+      link: `/songs/name=${cardsData.songs.nome}/id=${cardsData.songs.id}`
     },
     p1: {
       text: 'Musicas',

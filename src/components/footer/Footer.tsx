@@ -2,9 +2,9 @@ import React from 'react';
 import { ContainerFooter, FooterContent, FooterLinks, FooterText} from './style/FooterStyled';
 import { LoaderDW } from '../../pages/style/HomeStyled';
 
-const Footer: React.FC<{ wdb?: boolean }> = ({ wdb = true }) => {
+const Footer: React.FC<{ $wdb?: boolean }> = ({ $wdb = true }) => {
   return (
-    <ContainerFooter awb={wdb}>
+    <ContainerFooter $awb={$wdb ? "true" : "false"}>
       <FooterContent>
         {/*, FooterLogo  <FooterLogo src={logoSrc} alt="Logo" /> */}
         <LoaderDW size={35} />

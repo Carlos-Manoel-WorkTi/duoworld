@@ -130,7 +130,7 @@ export const HistoryDetail: React.FC<PropBookDetail> = (prop) => {
                 )) : "Sem capítulos disponíveis"}
             </ContainerCaps>
             <NavMobile active="NHistories" ></NavMobile>
-            <Footer wdb={true}/>
+            <Footer $wdb={true}/>
         </>
     );
 };

@@ -185,7 +185,7 @@ export default function HistoryPage() {
         action1={navigateBack}
         action2={nextPage}
       ></LineMethodsFooter>
-      <Footer wdb={false}/>
+      <Footer $wdb={false}/>
     </>
   );
 }

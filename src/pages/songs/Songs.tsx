@@ -24,6 +24,7 @@ export default function Songs() {
         <ContainerSong>
               {SongsData.map(song => (
                 <CardSong 
+                    key={song.id}
                     link={song.link}
                     name={song.title}
                     data={"10/10/2021"}
@@ -36,7 +37,7 @@ export default function Songs() {
       </main>
       <Paginato/>
       <NavMobile active="NSongs" ></NavMobile>
-      <Footer wdb={true}/>
+      <Footer $wdb={true}/>
     </>
   )
 }

@@ -31,7 +31,7 @@ const HeaderComp: React.FC<PropHeaderITC> = ({active}) => {
           <NavLink to="/histories" >Histories &#187;</NavLink>
         </li>
         <li id={active === "LHelp" ? "LHelp" : ""}>
-          <NavLink to="/help">Help &#187;</NavLink>
+          <NavLink to="/teste">Help &#187;</NavLink>
         </li>
       </ul>
       <HamburgerLabel className="hamburger">

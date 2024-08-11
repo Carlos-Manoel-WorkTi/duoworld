@@ -33,7 +33,7 @@ function Home() {
             </SectionMessage>
           </main>
           <NavMobile active="NHome" ></NavMobile>
-          <Footer wdb={true}/>
+          <Footer $wdb={true}/>
     </HomeComponent>
   );
 }

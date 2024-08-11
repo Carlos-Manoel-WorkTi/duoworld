@@ -13,6 +13,8 @@ export const ContainerLirycs = styled.section`
     align-items: flex-start;
     text-align: left;
     position: relative;
+    overflow-y: scroll;
+    max-height: 73vh;
 
     @media (min-width: 768px) {
         flex-direction: row;
@@ -38,7 +40,7 @@ export const Lirycs = styled.p`
 
     @media (min-width: 768px) {
         width: 50%;
-        font-size: 1.8em; 
+        font-size: 1.5em; 
     }
 
     @media (min-width: 1024px) {
@@ -54,7 +56,7 @@ export const Lirycs = styled.p`
 // area works
 
 
-export const Works = styled.p`
+export const Works = styled.div`
     width: 100%;
     background-color: #0f0e10;
     border-left:1px solid rgb(28, 9, 82);
@@ -200,17 +202,6 @@ export const ContainerSongControllersForward = styled.button`
   }
 `;
 
-const ContainerSongControllersStartAndPause  = styled.div`
-  width: 37px;
-  height: 34px;
-  position: relative;
-  margin-top: -7px;
-  border-radius: 50%;
-  @media (max-width: 460px){
-    margin-top: -13px;
-}
-`;
-
 const borderAnimate = keyframes`
   0% {
     transform: rotate(0);
@@ -236,6 +227,24 @@ const reveal = keyframes`
     width: 35%;
   }
 `;
+
+const ContainerSongControllersStartAndPause = styled.button`
+  width: 37px;
+  height: 34px;
+  position: relative;
+  margin-top: 0; /* Ajustei o margin-top */
+  border-radius: 50%;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer; /* Garante que o cursor seja um ponteiro */
+
+  @media (max-width: 460px) {
+    width: 30px;
+    height: 30px;
+  }
+`;
+
 const PlayButton = styled.input`
   position: absolute;
   appearance: none;
@@ -245,17 +254,19 @@ const PlayButton = styled.input`
   background: conic-gradient(#fff, #fff);
   cursor: pointer;
   outline: none;
+  border: none;
+  top: 0;
+  left: 0;
 
   &::before {
     content: "";
     position: absolute;
-    width: 93%;
-    height: 93%;
+    width: 100%;
+    height: 100%;
     background-color: #000;
     border-radius: 50%;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
   }
 
   &:checked {
@@ -267,11 +278,11 @@ const PlayButton = styled.input`
 const PlayIcon = styled.div`
   position: absolute;
   width: 14px;
-  height: 12px; 
-  left: 60%;
+  height: 12px;
+  left: 55%;
   top: 50%;
   background-color: #f2f2f2;
-  transform: translate(-60%, -50%) rotate(90deg);
+  transform: translate(-50%, -50%) rotate(90deg);
   clip-path: polygon(50% 15%, 0% 100%, 100% 100%);
   transition: all 400ms ease-in-out;
   cursor: pointer;
@@ -285,7 +296,7 @@ const PlayIcon = styled.div`
 const PauseIcon = styled.div`
   position: absolute;
   width: 14px;
-  height: 12px; 
+  height: 12px;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -321,18 +332,22 @@ const PauseIcon = styled.div`
   }
 `;
 
-export const PlayPauseButton: React.FC = () => {
-    return (
-      <ContainerSongControllersStartAndPause>
-        <label>
-          <PlayButton type="checkbox" />
-          <PlayIcon />
-          <PauseIcon />
-        </label>
-      </ContainerSongControllersStartAndPause>
-    );
-  };
+interface ButtonProps {
+  onc: () => void;
+  children?: React.ReactNode;
+}
 
+export const PlayPauseButton: React.FC<ButtonProps> = ({ onc, children }) => {
+  return (
+    <ContainerSongControllersStartAndPause onClick={onc}>
+      <label>
+        <PlayButton type="checkbox" />
+        <PlayIcon />
+        <PauseIcon />
+      </label>
+    </ContainerSongControllersStartAndPause>
+  );
+};
   
 
   interface SwitchProps {
@@ -346,10 +361,10 @@ export const PlayPauseButton: React.FC = () => {
     border-radius: 30px;
     border: 4px solid rgba(58, 58, 58, 0.1);
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.5) inset;
-    height: 48px;
+    height: 35px;
     margin: 2px 20px;
     position: relative;
-    width: 120px;
+    width: 100px;
     display: inline-block;
     user-select: none;
   `;
@@ -363,7 +378,7 @@ export const PlayPauseButton: React.FC = () => {
     cursor: pointer;
     display: block;
     height: 42px;
-    width: 115px;
+    width: 94px;
     position: relative;
   `;
   
@@ -373,7 +388,7 @@ export const PlayPauseButton: React.FC = () => {
     border: 1px solid #1a1a1a;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.5), 0 1px 1px rgba(255, 255, 255, 0.1) inset, 0 -2px 0 rgba(0, 0, 0, 0.2) inset;
     display: block;
-    height: 38px;
+    height: 25px;
     left: 1px;
     position: absolute;
     top: 1px;
@@ -388,7 +403,7 @@ export const PlayPauseButton: React.FC = () => {
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2) inset;
     content: "";
     display: block;
-    height: 33px;
+    height: 18px;
     left: 2px;
     position: absolute;
     top: 2px;
@@ -403,7 +418,7 @@ export const PlayPauseButton: React.FC = () => {
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2) inset;
     content: "";
     display: block;
-    height: 33px;
+    height: 18px;
     position: absolute;
     right: 2px;
     top: 2px;
@@ -421,7 +436,7 @@ export const PlayPauseButton: React.FC = () => {
     display: block;
     height: 10px;
     position: absolute;
-    top: 16px;
+    top: 8px;
     right: -20%;
     transition: all 0.2s;
     width: 10px;
@@ -437,7 +452,7 @@ export const PlayPauseButton: React.FC = () => {
     display: block;
     height: 10px;
     position: absolute;
-    top: 16px;
+    top: 8px;
     left: -20%;
     transition: all 0.2s;
     width: 10px;
@@ -451,7 +466,7 @@ export const PlayPauseButton: React.FC = () => {
         {checked ? <LightOn /> : <LightOff />}
         <SwitchSlider
           style={{
-            left: checked ? '59px' : '1px',
+            left: checked ? '38px' : '1px',
           }}
         />
       </SwitchLabel>
@@ -462,4 +477,56 @@ export const PlayPauseButton: React.FC = () => {
     width: 100%;
     height: auto;
     padding:3% 0%;
+
+    h2{
+      font-size: 1.2em;
+      color: #cdcdcd;
+      font-weight: 20;
+    }
   `
+
+export const ControllerVel = styled.div`
+  margin-top: 5px;
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  gap: 20px;
+  align-items: center;
+
+  button {
+    background-color: transparent;
+    border: 1px solid rgb(28, 9, 82);
+    padding: 2px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+    
+    &:hover {
+      background-color: rgba(28, 9, 82, 0.1);
+      border-color: rgb(28, 9, 82);
+    }
+
+    &:active {
+      background-color: rgba(28, 9, 82, 0.2);
+      border-color: rgb(28, 9, 82);
+    }
+    &:disabled {
+      background-color: rgba(28, 9, 82, 0.05);
+      border-color: rgb(198, 198, 198);
+      cursor: not-allowed;
+      opacity: 0.6; 
+    }
+  }
+
+  svg {
+    color: #fff;
+    transition: color 0.3s;
+    
+    button:hover & {
+      color: rgb(28, 9, 82);
+    }
+
+    button:active & {
+      color: rgb(28, 9, 82);
+    }
+  }
+`;
