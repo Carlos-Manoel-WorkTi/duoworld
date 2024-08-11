@@ -5,7 +5,7 @@
   import { NavigateHistory } from '../histories/script/Methods';
   import NavMobile from '../../components/navMobile/NavMobile';
   import Footer from '../../components/footer/Footer';
-  import { BtnArchived, ButtonLink, ContainerArchived, ContainerButtons, HiddenInput, ListContainer, ListUl, Name, PageItem, PageSizeSelector, PaginationButton, PaginationWrapper, Radio, RadioInputs, StyledButton, Table, TableBody, TableCell, TableContainer, TableHeader, TableHeaderCell, TableRow } from './style/WordStyle';
+  import { BtnArchived, ButtonLink, ContainerADS, ContainerArchived, ContainerButtons, ContainerFA, ContainerFilter, HiddenInput, ContainerShower, ListUl, Name, PageItem, PageSizeSelector, PaginationButton, PaginationWrapper, Radio, RadioInputs, StyledButton, Table, TableBody, TableCell, TableContainer, TableHeader, TableHeaderCell, TableRow } from './style/WordStyle';
   import DataWords from './script/data';
   import { NavLink } from 'react-router-dom';
 
@@ -84,9 +84,42 @@
               </svg>
             </StyledButton>
           </ContainerButtons>
-          {selected === 'table' ? 
-            <>
               <TableContainer>
+                <ContainerFA>
+                      <ContainerFilter>
+                        <h3>FIlters:</h3>
+                        <div className='dfop'>
+                          <label className='lb-f' htmlFor="">Por origem</label>
+                          <input type="text" />
+                          <button>
+                            <span className='srcp-f'>procurar</span>
+                            <svg className='srci-f'  height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z" stroke="rgb(213, 213, 213)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M22 22L20 20" stroke="rgb(223, 222, 234)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                          </button>
+                        </div>
+                        <div className='dfop'>
+                          <label className='lb-f' htmlFor="">Por tradução</label>
+                          <input type="text" />
+                          <button>
+                            <span className='srcp-f'>procurar</span>
+                            <svg className='srci-f'  height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z" stroke="rgb(213, 213, 213)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M22 22L20 20" stroke="rgb(223, 222, 234)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                          </button>
+                        </div>
+                        <div className='dfop'>
+                          <label className='lb-f' htmlFor="">Por data de criação</label>
+                          <input type="text" />
+                          <button>
+                            <span className='srcp-f'>procurar</span>
+                            <svg className='srci-f'  height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z" stroke="rgb(213, 213, 213)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M22 22L20 20" stroke="rgb(223, 222, 234)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                          </button>
+                        </div>
+                  </ContainerFilter>
+                  <ContainerADS>
+                    <h2>ADS</h2>
+                  </ContainerADS>
+                </ContainerFA>
+                
+               { selected === "table" ?
+               <ContainerShower>
                 <Table>
                   <TableHeader>
                     <TableRow>
@@ -107,52 +140,15 @@
                     ))}
                   </TableBody>
                 </Table>
-              </TableContainer>
-              <PaginationWrapper>
-                <PaginationButton disabled={true}>
-                  <ButtonLink
-                    disabled={false}
-                    onClick={() => {}}
-                  >
-                    <svg viewBox="64 64 896 896" focusable="false" data-icon="left" fill="currentColor" aria-hidden="true">
-                      <path d="M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 000 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z"></path>
-                    </svg>
-                  </ButtonLink>
-                </PaginationButton>
-                <PageItem active={true}>
-                  <NavLink to="#" onClick={() => {}}>1</NavLink>
-                </PageItem>
-                <PageItem active={true}>
-                  <NavLink to="#" onClick={() => {}}>2</NavLink>
-                </PageItem>
-
-                <PaginationButton disabled={false}>
-                  <ButtonLink
-                    disabled={false}
-                    onClick={() => {}}
-                  >
-                    <svg viewBox="64 64 896 896" focusable="false" data-icon="right" fill="currentColor" aria-hidden="true">
-                      <path d="M765.7 486.8L314.9 134.7A7.97 7.97 0 00302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 000-50.4z"></path>
-                    </svg>
-                  </ButtonLink>
-                </PaginationButton>
-                <PageSizeSelector>
-                  <div className="ant-select-selector">
-                    <span className="ant-select-selection-item">50 / page</span>
-                    <span className="ant-select-arrow">
-                      <svg viewBox="64 64 896 896" focusable="false" data-icon="down" fill="currentColor" aria-hidden="true">
-                        <path d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"></path>
-                      </svg>
-                    </span>
-                  </div>
-                </PageSizeSelector>
-              </PaginationWrapper>       
-            </> 
-            : 
-            <>
-              <ListContainer>
+               
+               
+                </ContainerShower>
+   
+                :
+                <ContainerShower>
+                
                 <ListUl onClick={GetInformationsAboutLi }>
-                {DataWords.data.map((d, index) => (
+                {DataWords.data.slice(0, 6).map((d, index) => (
                 <li key={index}>
                   <div className="checkedBtn">                       
                     <div className="checkbox-wrapper-12">
@@ -204,9 +200,50 @@
 
 
                 </ListUl>
-              </ListContainer>
-            </>
-          }
+                </ContainerShower>
+                }
+            
+              </TableContainer>
+                <PaginationWrapper>
+                  <PaginationButton disabled={true}>
+                    <ButtonLink
+                      disabled={false}
+                      onClick={() => {}}
+                    >
+                      <svg viewBox="64 64 896 896" focusable="false" data-icon="left" fill="currentColor" aria-hidden="true">
+                        <path d="M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 000 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z"></path>
+                      </svg>
+                    </ButtonLink>
+                  </PaginationButton>
+                  <PageItem active={true}>
+                    <NavLink to="#" onClick={() => {}}>1</NavLink>
+                  </PageItem>
+                  <PageItem active={true}>
+                    <NavLink to="#" onClick={() => {}}>2</NavLink>
+                  </PageItem>
+
+                  <PaginationButton disabled={false}>
+                    <ButtonLink
+                      disabled={false}
+                      onClick={() => {}}
+                    >
+                      <svg viewBox="64 64 896 896" focusable="false" data-icon="right" fill="currentColor" aria-hidden="true">
+                        <path d="M765.7 486.8L314.9 134.7A7.97 7.97 0 00302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 000-50.4z"></path>
+                      </svg>
+                    </ButtonLink>
+                  </PaginationButton>
+                  <PageSizeSelector>
+                    <div className="ant-select-selector">
+                      <span className="ant-select-selection-item">50 / page</span>
+                      <span className="ant-select-arrow">
+                        <svg viewBox="64 64 896 896" focusable="false" data-icon="down" fill="currentColor" aria-hidden="true">
+                          <path d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"></path>
+                        </svg>
+                      </span>
+                    </div>
+                  </PageSizeSelector>
+                </PaginationWrapper> 
+          
               <ContainerArchived>
                 <BtnArchived>
                   Arquivadas

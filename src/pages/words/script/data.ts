@@ -1,7 +1,7 @@
 import { WordData } from "../DTOs/WordData";
 
 const DataWords = {
-  "header": ["origem", "tradução", "fala", "classe", "tempo", "timeCreate"], // Adiciona timeCreate ao header
+  "header": ["origem", "tradução", "fala", "classe", "tempo", "timeCreate"],
   "date": "2024-08-08",
   "data": [
     {
@@ -10,7 +10,7 @@ const DataWords = {
       "fala": "relou",
       "classe": "substantivo",
       "tempo": "presente",
-      "timeCreate": "2024-08-08T10:00:00Z" // Adiciona timeCreate para cada item
+      "timeCreate": "08/08/2024" // Data formatada diretamente
     },
     {
       "origem": "run",
@@ -18,7 +18,7 @@ const DataWords = {
       "fala": "rruan",
       "classe": "verbo",
       "tempo": "presente",
-      "timeCreate": "2024-08-08T10:05:00Z" // Adiciona timeCreate para cada item
+      "timeCreate": "08/08/2024" // Data formatada diretamente
     },
     {
       "origem": "book",
@@ -26,15 +26,15 @@ const DataWords = {
       "fala": "buuk",
       "classe": "substantivo",
       "tempo": "presente",
-      "timeCreate": "2024-08-08T10:10:00Z" // Adiciona timeCreate para cada item
+      "timeCreate": "08/08/2024" // Data formatada diretamente
     },
     {
-      "origem": "quickly",
-      "tradução": "rapidamente",
-      "fala": "advérbio",
-      "classe": "advérbio",
-      "tempo": "presente",
-      "timeCreate": "2024-08-08T10:15:00Z" // Adiciona timeCreate para cada item
+      "origem": "thing",
+      "tradução": "coisa",
+      "fala": "feng",
+      "classe": "substantivo",
+      "tempo": "null",
+      "timeCreate": "08/08/2024" // Data formatada diretamente
     },
     {
       "origem": "beautiful",
@@ -42,7 +42,7 @@ const DataWords = {
       "fala": "biarifu",
       "classe": "adjetivo",
       "tempo": "presente",
-      "timeCreate": "2024-08-08T10:20:00Z" // Adiciona timeCreate para cada item
+      "timeCreate": "08/08/2024" // Data formatada diretamente
     },
     {
       "origem": "die",
@@ -50,7 +50,7 @@ const DataWords = {
       "fala": "dai",
       "classe": "verbo",
       "tempo": "presente",
-      "timeCreate": "2024-08-08T10:25:00Z" // Adiciona timeCreate para cada item
+      "timeCreate": "08/08/2024" // Data formatada diretamente
     },
     {
       "origem": "the",
@@ -58,7 +58,7 @@ const DataWords = {
       "fala": "dê",
       "classe": "adjetivo",
       "tempo": "presente",
-      "timeCreate": "2024-08-08T10:30:00Z" // Adiciona timeCreate para cada item
+      "timeCreate": "08/08/2024" // Data formatada diretamente
     }
   ] as WordData[]
 }

@@ -52,13 +52,99 @@ interface NameProps {
   `;
 
 
+export const ContainerADS = styled.aside`
+  background-color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: red;
+  margin-top: 20px;
+  height: 44%;
+`
+export const ContainerFA = styled.div`
+  width: 25%;
+`
+export const ContainerFilter = styled.div`
+  width: 100%;
+  color: white;
+  padding-left: 1%;
+  padding-right: 2%;
 
+  .dfop{
+    margin: 2px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    
+  }
+  .srci-f{
+    width: 20px;
+    display: none;
+    height: 15px;
+  }
+  h3{
+    border-bottom: 1px solid white;
+    width: 100%;
+    margin-bottom: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+  }
+  .lb-f{
+    display: block;
+    width: 100%;
+    /* font-family: 'Times New Roman', Times, serif; */
+    color: #d3d5d6;
+  }
+  input{
+    border-radius: 2px;
+    padding: 5px 3px;
+    outline: none;
+    border: none;
+    width: 70%;
+  }
+  button{
+    width: 25%;
+    margin-left: 5px;
+    color: white;
+    background-color: #2656e4;
+    border: none;
+    padding: 6px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @media (max-width:1050px){
+    .srcp-f{
+      display: none;
+    }
+    .srci-f{
+      display: block;
+    }
+  }
+  
+`
+
+export const ContainerShower = styled.div`
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 0;
+  padding: 0 3%;
+  margin-bottom: 7px;
+  width: 70%;
+  /* scrollbar-width: thin;
+  scrollbar-color: rgb(60, 30, 179) #222; */
+  overflow-y: hidden;
+
+  
+`;
 
 export const TableContainer = styled.div`
   max-width: 100%;
   overflow-x: auto;
   margin:0;
   padding: 1% 3%;
+  display: flex;
+  justify-content: space-between;
 `;
 
 export const Table = styled.table`
@@ -166,8 +252,9 @@ export const PaginationWrapper = styled.ul`
   margin: 0;
   align-items: center;
   justify-content: center;
-  padding-left: 5%;
+  padding-left: 63%;
   padding-bottom: 3%;
+  width: 100%;
 `;
 
 // Botões de navegação
@@ -245,30 +332,6 @@ export const PageSizeSelector = styled.div`
 `;  
 
 //List
-export const ListContainer = styled.div`
-  max-width: 100%;
-  overflow-x: auto;
-  margin:0;
-  padding: 1%   3%;
-  margin-bottom: 7px;
-  ::-webkit-scrollbar {
-    height: 8px; /* Define the height of the scrollbar */
-  }
-
-  ::-webkit-scrollbar-track {
-    background: #0f0e0e; /* Color of the track */
-    border-radius: 10px; /* Rounded corners for the track */
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: #888; /* Color of the scrollbar */
-    border-radius: 10px; /* Rounded corners for the scrollbar */
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555; /* Color when the scrollbar is hovered */
-  }
-`;
 
 export const ListUl = styled.ul`
   width: 100%;

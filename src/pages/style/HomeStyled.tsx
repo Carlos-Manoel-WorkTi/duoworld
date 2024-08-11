@@ -9,6 +9,8 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        scrollbar-width: thin;
+        scrollbar-color: rgb(32, 17, 79) #222;
     }
 
     body {
@@ -20,6 +22,7 @@ export const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
         height: 100vh;
         min-height: 100vh;
+     
     }
 
 `;

@@ -9,6 +9,7 @@ import Error404 from "../pages/erros/Error404";
 import Songs from "../pages/songs/Songs";
 import SongInit from "../pages/songs/SongInit";
 import Teste from "../pages/songs/teste";
+import Login from "../pages/login/Login";
 
 const Routes = createBrowserRouter([
     {
@@ -51,6 +52,12 @@ const Routes = createBrowserRouter([
         element: <SongInit/>,
         errorElement: <Error404/>
     },
+    {
+        path: "/login",
+        element: <Login/>,
+        errorElement: <Error404/>
+    }
+    
    
 ])
 
