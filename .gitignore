@@ -22,37 +22,3 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-
-
-
-
-
- {/* <ContainerSong>
-              <ContainerSongIMG src='https://upload.wikimedia.org/wikipedia/pt/9/9c/Ed_Sheeran_Perfect.jpg'/>
-              <ContainerSongTitleAndAuthor> 
-                <ContainerSongTitle>Perfect</ContainerSongTitle>
-                <ContainerSongAuthor>Ed Sheeran</ContainerSongAuthor>
-              </ContainerSongTitleAndAuthor>
-              <ContainerSongInf>
-                <ContainerSongControllers>
-                  <ContainerSongControllersBack>
-                    <svg width="23" height="16" viewBox="0 0 23 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M11.5 8V0L0 8L11.5 16V8ZM23 0L11.5 8L23 16V0Z" fill="#fff"></path>
-                    </svg>
-                  </ContainerSongControllersBack>
-                  <PlayPauseButton></PlayPauseButton>
-                  <ContainerSongControllersForward>
-                    <svg width="23" height="16" viewBox="0 0 23 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M11.5 8V0L23 8L11.5 16V8ZM0 0L11.5 8L0 16V0Z" fill="#fff"></path>
-                    </svg>
-                  </ContainerSongControllersForward>
-                </ContainerSongControllers>
-                <ContainerSongInfDiv>
-                  <ContainerSongTimeCurrent>00:02</ContainerSongTimeCurrent>
-                  <ContainerSongProgress>
-                    <progress value={4} max={100} />
-                  </ContainerSongProgress>
-                  <ContainerSongTimeFinal>03:30</ContainerSongTimeFinal>
-                </ContainerSongInfDiv>
-              </ContainerSongInf>
-            </ContainerSong> */}

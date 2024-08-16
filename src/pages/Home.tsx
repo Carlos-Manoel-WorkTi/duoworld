@@ -10,6 +10,7 @@ import NavMobile from '../components/navMobile/NavMobile';
 
 
 function Home() {
+  
   return (
 
     <HomeComponent>

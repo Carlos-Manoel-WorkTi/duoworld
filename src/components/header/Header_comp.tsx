@@ -1,24 +1,41 @@
-import React from 'react'
-import {  HamburgerLabel, HeaderComponent } from './style/HeaderStyle'
+import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { useAuth } from '../../auth/Auth';// Importe o hook useAuth
+import { HamburgerLabel, HeaderComponent } from './style/HeaderStyle';
+import { NavigateHistory } from '../../pages/histories/script/Methods';
 
-interface PropHeaderITC {
-  active: string;
-}
-
-const HeaderComp: React.FC<PropHeaderITC> = ({active}) => {
+const HeaderComp: React.FC<{ active: string }> = ({ active }) => {
+  const { authData } = useAuth(); 
+  const { navigateTo } = NavigateHistory();
   return (
-   <HeaderComponent>
+    <HeaderComponent>
       <div id="user">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8co4Li5Riht4VYYvdrYS188NoK19B-pznKg&s" alt="" />
-        <div>
-          <h4>Usuario</h4>
-          <h5>ususario@gmail.com</h5>
-        </div>
+        {authData.profile.data.login ? (
+          <>
+            <img src={`${authData.profile.data.img}`} alt="Profile" />
+            <div>
+              <h4>{`${authData.profile.data.name}`}</h4>
+              <h5>{`${authData.profile.data.email}`}</h5>
+            </div>
+          </>
+        ) : (
+          
+        <button className="button" onClick={() => navigateTo("/login") } >
+          Login in
+          <svg fill="currentColor" viewBox="0 0 24 24" className="icon">
+            <path
+              clip-rule="evenodd"
+              d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+              fill-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+
+        )}
       </div>
       <h1 id='logo'>DW</h1>
       <ul>
-        <li id={active === "LHome" ? "LHome" : ""} >
+        <li id={active === "LHome" ? "LHome" : ""}>
           <NavLink to="/" >Home &#187;</NavLink>
         </li>
         <li id={active === "LSongs" ? "LSongs" : ""}>
@@ -41,9 +58,8 @@ const HeaderComp: React.FC<PropHeaderITC> = ({active}) => {
           <path className="line" d="M7 16 27 16"></path>
         </svg>
       </HamburgerLabel>
-
-   </HeaderComponent>
-  )
+    </HeaderComponent>
+  );
 }
 
 export default HeaderComp;

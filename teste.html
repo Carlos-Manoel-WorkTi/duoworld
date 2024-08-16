@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  fetch("http://localhost:8083/auth/register", {
+    method: 'POST',
+    mode: 'no-cors', // Modo no-cors
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        nome: "aqwwwwwdqqwq",
+        email: "awwwwwwqdqqqqwqq@gmail.com",
+        img: "img.jpg",
+        senha: "1212"
+    })
+})
+.then(response => {
+    // Resposta não pode ser lida no modo 'no-cors'
+    console.log('Request was made, but response is not accessible.');
+})
+.catch(error => {
+    console.error('Error:', error);
+});
+
+  </script>
+</body>
+</html>
