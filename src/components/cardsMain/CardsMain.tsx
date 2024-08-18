@@ -91,7 +91,7 @@ export default function CardsMain() {
       link: `/histories/id=${cardsData.history.id}`
     },
     p1: {
-      text: 'Aprendendo',
+      text: 'Atuais',
       value: '2'
     },
     p2: {

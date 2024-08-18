@@ -35,8 +35,8 @@ const Card = styled.div`
 `;
 
 const TopSection = styled.div<{
-    startColor?: string;
-    endColor?: string;
+    $startColor?: string;
+    $endColor?: string;
 }>`
   height: 215px;
   border-radius: 15px;
@@ -44,8 +44,8 @@ const TopSection = styled.div<{
   flex-direction: column;
   background: linear-gradient(
     45deg,
-    ${props => props.startColor || 'rgb(89, 4, 187)'} 0%,
-    ${props => props.endColor || '#307EB7'} 100%
+    ${props => props.$startColor || 'rgb(89, 4, 187)'} 0%,
+    ${props => props.$endColor || '#307EB7'} 100%
   );
   position: relative;
   
@@ -81,9 +81,7 @@ const TopSection = styled.div<{
       height: 5%;
     }
 
-    @media (max-width: 992px){
 
-    }
     @media screen and (max-width:600px){
       #bloco2{
         display: flex;
@@ -104,6 +102,10 @@ const TopSection = styled.div<{
     border-top-left-radius: 15px;
     box-shadow: -5px -5px 0 2px #0D0D0D;
   }
+
+  @media (max-width: 730px){
+      height: 192px;
+    }
 `;
 
 const Border = styled.div`
@@ -238,11 +240,11 @@ const TitleSection = styled.div`
   }
   
 `;
-const Item = styled.div<{textColor?:string}>`
+const Item = styled.div<{$textColor?:string}>`
   flex: 30%;
   text-align: center;
   padding: 5px;
-  color: ${props => props.textColor || 'rgba(170, 222, 243, 0.721)'} ;
+  color: ${props => props.$textColor || 'rgba(170, 222, 243, 0.721)'} ;
 
   .big-text {
     font-size: 15px;
@@ -270,15 +272,15 @@ const Logo = styled.h6`
         line-height: 8px;
 `
 const EnterButton = styled.button<{
-  startColor?: string;
-  endColor?: string;
-  btnColor?:string;
-  btnBG?:string;
+  $startColor?: string;
+  $endColor?: string;
+  $btnColor?:string;
+  $btnBG?:string;
 }>`
   background-image: linear-gradient(
     19deg,
-    ${props => props.btnBG || '#21D4FD'} 0%,
-    ${props => props.endColor || '#B721FF'} 100%
+    ${props => props.$btnBG || '#21D4FD'} 0%,
+    ${props => props.$endColor || '#B721FF'} 100%
   );
   color: white;
   font-family: inherit;
@@ -319,7 +321,7 @@ const EnterButton = styled.button<{
     svg {
       width: 1.5em;
       transition: transform 0.3s;
-      color: ${props => props.btnColor || '#B721FF'};
+      color: ${props => props.$btnColor || '#B721FF'};
     }
   }
 
@@ -349,7 +351,7 @@ const CurrentTitle = styled.h3`
   color: white;
   padding-bottom: 8px;
   @media (max-width: 720px) {
-    font-size: 1.8em;
+    font-size: 1.2em;
   }
 `
 
@@ -364,7 +366,7 @@ const ProgressBarContainer = styled.div`
 
 const ProgressBarFiller = styled.div<ProgressBarProps>`
   height: 100%;
-  width: ${(props) => props.percentage}%;
+  width: ${(props) => props.$porcentage}%;
   background-color: #383838;
   border-radius: inherit;
   text-align: center;
@@ -450,7 +452,7 @@ const Parallelogram = styled.div`
 const CardComponent: React.FC<CardComponentProps> = (prop) => {
   return (
     <Card>
-      <TopSection startColor={prop.data.style.startColor} endColor={prop.data.style.endColor}>
+      <TopSection $startColor={prop.data.style.startColor} $endColor={prop.data.style.endColor}>
         <Border />
         <Icons>
           <TitleSection>
@@ -479,7 +481,7 @@ const CardComponent: React.FC<CardComponentProps> = (prop) => {
           </div>
           <div id="bloco2">
             <NavLink to={prop.data.title.link} className="url">
-                <EnterButton startColor={prop.data.style.startColor} endColor= "rgb(2 3 3)" btnColor={prop.data.style.btnBG} btnBG={prop.data.style.btnBG}>
+                <EnterButton $startColor={prop.data.style.startColor} $endColor= "rgb(2 3 3)" $btnColor={prop.data.style.btnBG} $btnBG={prop.data.style.btnBG}>
                 Continuar
                 <div className="icon">
                   <svg
@@ -487,7 +489,7 @@ const CardComponent: React.FC<CardComponentProps> = (prop) => {
                     width="24"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
-                  >
+                  > 
                     <path d="M0 0h24v24H0z" fill="none"></path>
                     <path
                       d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
@@ -501,7 +503,7 @@ const CardComponent: React.FC<CardComponentProps> = (prop) => {
            {prop.data.porncetagem ? 
           <div id="bloco3">
            <ProgressBarContainer >
-              <ProgressBarFiller percentage={prop.data.pct}/>
+              <ProgressBarFiller $porcentage={prop.data.pct}/>
               <ProgressBarLabel>{`${prop.data.pct}%`}</ProgressBarLabel>
             </ProgressBarContainer>
           </div>: ""}
@@ -510,15 +512,15 @@ const CardComponent: React.FC<CardComponentProps> = (prop) => {
       <BottomSection>
         <Title>Status</Title>
         <Row>
-          <Item textColor={prop.data.style.startColor} >
+          <Item $textColor={prop.data.style.startColor} >
             <span className="big-text">{prop.data.p1.value}</span>
             <span className="regular-text">{prop.data.p1.text}</span>
           </Item>
-          <Item textColor={prop.data.style.startColor}>
+          <Item $textColor={prop.data.style.startColor}>
             <span className="big-text">{prop.data.p2.value}</span>
             <span className="regular-text">{prop.data.p2.text}</span>
           </Item>
-          <Item textColor={prop.data.style.startColor}>
+          <Item $textColor={prop.data.style.startColor}>
             <span className="big-text">{prop.data.p3.value}</span>
             <span className="regular-text">{prop.data.p3.text}</span>
           </Item>

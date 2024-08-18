@@ -1,4 +1,4 @@
 export default interface ProgressBarProps {
-    percentage: number;
+    $porcentage: number;
 
   };
