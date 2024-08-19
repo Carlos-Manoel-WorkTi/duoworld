@@ -7,7 +7,7 @@ import { NavigateHistory } from '../histories/script/Methods';
 import { setCookie } from '../../storage/localStorage';
 import { ResponseDTOS } from '../../auth/DTOs/ResponseDTOS';
 
-const clientId = process.env.REACT_APP_KEY;
+const clientId =  process.env.REACT_APP_KEY || '';
 
 const FormComponent: React.FC = () => {
   const { navigateTo } = NavigateHistory();
