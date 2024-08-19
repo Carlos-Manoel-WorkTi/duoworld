@@ -1,37 +1,62 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { useAuth } from '../../auth/Auth';// Importe o hook useAuth
-import { HamburgerLabel, HeaderComponent } from './style/HeaderStyle';
+import { useAuth } from '../../auth/Auth';
+import { HamburgerLabel, HeaderComponent, LoadProfile, ToggleError } from './style/HeaderStyle';
 import { NavigateHistory } from '../../pages/histories/script/Methods';
 
 const HeaderComp: React.FC<{ active: string }> = ({ active }) => {
   const { authData } = useAuth(); 
   const { navigateTo } = NavigateHistory();
+  const [loading,setLoading] = useState<Boolean>(false);
+
+  useEffect(() => {
+    if(authData.profile.data.loading){
+      setLoading(true)
+    }else{
+      setLoading(false)
+    }
+  }, [authData]);
+  
+
   return (
     <HeaderComponent>
+      {!authData.profile.data.unauthorized ? <ToggleError $color='#e4311d'>Login expirado</ToggleError> : ""}
       <div id="user">
-        {authData.profile.data.login ? (
+      {loading ? (
+        <LoadProfile>
+          <div className="wrapper">
+            <div className="circle"></div>
+            <div id="division">
+              <div className="line-1"></div>
+              <div className="line-2"></div>
+            </div>
+          </div>
+        </LoadProfile>
+      ) : (
+        authData.profile.data.login ? (
           <>
-            <img src={`${authData.profile.data.img}`} alt="Profile" />
+            <img src={authData.profile.data.img} alt="Profile" />
             <div>
-              <h4>{`${authData.profile.data.name}`}</h4>
-              <h5>{`${authData.profile.data.email?.substring(0,15)}...`}</h5>
+              <h4>{authData.profile.data.name}</h4>
+              <h5>{authData.profile.data.email?.substring(0, 15)}...</h5>
             </div>
           </>
         ) : (
-          
-        <button className="button" onClick={() => navigateTo("/login") } >
-          Login in
-          <svg fill="currentColor" viewBox="0 0 24 24" className="icon">
-            <path
-              clipRule="evenodd"
-              d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
-              fillRule="evenodd"
-            ></path>
-          </svg>
-        </button>
+          <button className="button" onClick={() => navigateTo("/login")}>
+            Login in
+            <svg fill="currentColor" viewBox="0 0 24 24" className="icon">
+              <path
+                clipRule="evenodd"
+                d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+                fillRule="evenodd"
+              ></path>
+            </svg>
+          </button>
+        )
+      )}
 
-        )}
+   
+
       </div>
       <h1 id='logo'>DW</h1>
       <ul>

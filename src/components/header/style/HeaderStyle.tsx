@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes }  from "styled-components";
 
 export const HeaderComponent = styled.header`
     width: 100%;
@@ -235,4 +235,139 @@ export const HamburgerLabel = styled.label`
   @media (min-width: 600px) {
       display:none;
     }
+`;
+
+export const LoadProfile = styled.div`
+  position: relative;
+  width: 240px;
+  height: 70px;
+  padding: 0px;
+  background: linear-gradient(to bottom, #0d061a, #0D0D0D);
+  overflow: hidden;
+
+  .wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    position: relative;
+  }
+
+  .wrapper > div {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .circle:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(110deg, rgba(227, 227, 227, 0) 0%, rgba(227, 227, 227, 0) 40%, rgba(227, 227, 227, 0.5) 50%, rgba(227, 227, 227, 0) 60%, rgba(227, 227, 227, 0) 100%);
+    animation: gradient-animation_2 1.2s linear infinite;
+  }
+
+  .circle {
+    width: 57px;
+    height: 54px;
+    border-radius: 50%;
+    margin-right: 5px;
+    background-color: #cacaca0d;
+  }
+
+  #division {
+    width: 105px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 42px;
+
+  .line-1, .line-2 {
+    background-color: #cacaca0d;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .line-1 {
+    height: 10px;
+    width: 100%; 
+  }
+
+  .line-2 {
+    height: 10px;
+    width: 100%; 
+  }
+
+  .line-1::after, .line-2::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(110deg, rgba(227, 227, 227, 0) 0%, rgba(227, 227, 227, 0) 40%, rgba(227, 227, 227, 0.5) 50%, rgba(227, 227, 227, 0) 60%, rgba(227, 227, 227, 0) 100%);
+    animation: gradient-animation_2 1.2s linear infinite;
+  }
+
+  @keyframes gradient-animation_2 {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }}
+`;
+
+
+// Define a animação de pulso
+const pulse = keyframes`
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+`;
+
+export const ToggleError = styled.span<{ $color: string }>`
+  position: absolute;
+  top: 14%;
+  left: 42%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  color: white;
+  background-color: ${({ $color }) => $color};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 30px;
+  border-radius: 8px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.3rem;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  white-space: nowrap;
+  animation: ${pulse} 1.5s infinite; 
+
+  @media screen and (max-width:770px) {
+    left: 37%;
+  }
+  @media screen and (max-width:600px) {
+    left: 32%;
+    font-size: 1em;
+    padding: 10px 20px;
+  }
+  @media screen and (max-width:400px) {
+    left: 29%;
+  }
 `;
