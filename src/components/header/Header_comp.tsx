@@ -20,7 +20,7 @@ const HeaderComp: React.FC<{ active: string }> = ({ active }) => {
 
   return (
     <HeaderComponent>
-      {!authData.profile.data.unauthorized ? <ToggleError $color='#e4311d'>Login expirado</ToggleError> : ""}
+      {!authData.profile.data.unauthorized ? <ToggleError $color='#e4311d'>Seu login esta expirado</ToggleError> : ""}
       <div id="user">
       {loading ? (
         <LoadProfile>
