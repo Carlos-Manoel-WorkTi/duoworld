@@ -8,7 +8,7 @@ import { setCookie } from '../../storage/localStorage';
 import { ResponseDTOS } from '../../auth/DTOs/ResponseDTOS';
 
 const FormComponent: React.FC = () => {
-  const clientId = "871723791946-n630vv83dk8moqu0gfh34qjqra5j5pau.apps.googleusercontent.com";
+  const clientId = process.env.REACT_APP_KEY || "";
   const { navigateTo } = NavigateHistory();
   const { setAuthData } = useAuth();
 
