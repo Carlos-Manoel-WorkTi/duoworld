@@ -56,7 +56,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
               data: {
                 login: true,
                 loading: false,
-                unauthorized: false,
+                unauthorized: true,
                 img: data.user[0].image,
                 name: data.user[0].name,
                 email: data.user[0].email,
