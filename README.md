@@ -1,47 +1,76 @@
-# Getting Started with Create React App
+# 🌍 DuoWorld
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+DuoWorld é um jogo web interativo desenvolvido com JavaScript, HTML e CSS.  
+O projeto foi criado para praticar lógica de programação, manipulação do DOM e conceitos básicos de game design diretamente no navegador.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🎮 Sobre o projeto
 
-### `npm start`
+O DuoWorld é um jogo simples que roda localmente no navegador, sem dependências externas ou frameworks.  
+O foco está na lógica do jogo, interação do usuário e organização do código frontend.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 🧰 Tecnologias utilizadas
 
-### `npm test`
+- JavaScript
+- HTML5
+- CSS3
+- Manipulação de DOM
+- Lógica de programação
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🚀 Como executar o projeto
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Clonar o repositório:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    git clone https://github.com/Carlos-Manoel-WorkTi/duoworld.git
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Acessar a pasta do projeto:
 
-### `npm run eject`
+    cd duoworld
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Executar o jogo:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Abra o arquivo index.html diretamente no navegador.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+---
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## 📂 Estrutura do projeto
 
-## Learn More
+    duoworld/
+    ├─ assets/
+    ├─ css/
+    ├─ js/
+    ├─ index.html
+    └─ README.md
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-# duoworld
+## 🧠 Aprendizados
+
+- Lógica de programação aplicada a jogos
+- Manipulação de eventos e elementos do DOM
+- Organização de scripts JavaScript
+- Estrutura básica de um jogo no navegador
+- Estilização com CSS
+
+---
+
+## 🔮 Possíveis melhorias
+
+- Sistema de pontuação
+- Novos níveis e desafios
+- Sons e efeitos visuais
+- Melhorias na experiência do usuário
+- Salvamento de progresso
+
+---
+
+## 📫 Contato
+
+GitHub: https://github.com/Carlos-Manoel-WorkTi  
+WhatsApp: https://wa.me/5575998800589  
+E-mail: carlosmanoelsantosdev@gmail.com
